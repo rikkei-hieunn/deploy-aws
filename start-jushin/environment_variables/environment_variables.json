@@ -1,8 +1,0 @@
-{
-  "TickSystem": {
-    "TK_SYSTEM_FIRST_KEI_S3_PATH": "environment_variables/groups_definition_first_kei.json",
-    "TK_SYSTEM_SECOND_KEI_S3_PATH": "environment_variables/groups_definition_second_kei.json",
-    "TK_SYSTEM_INSTANCE_PATH_ENV_KEY": "TK_JUSHIN_PROCESS_PATH",
-    "TK_SYSTEM_DEVELOP_ENVIRONMENT": true
-  }
-}

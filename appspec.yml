@@ -1,16 +1,9 @@
 version: 0.0
-os: linux
+os: windows
 files:
-  - source: /
-    destination: /home/ec2-use/
+  - source: \index.html
+    destination: C:\inetpub\wwwroot
 hooks:
-  ALLLLD:
-    - location: shell_scripts/ALLLLD.sh
-  ALLLLX:
-    - location: shell_scripts/ALLLLX.sh
-  CHIKUSEKICHECK:
-    - location: shell_scripts/CHIKUSEKICHECK.sh
-  DATADEL:
-    - location: shell_scripts/DATADEL.sh
-  DATATEISEISTART:
-    - location: shell_scripts/DATATEISEISTART.sh      
+  BeforeInstall:
+    - location: \before-install.bat
+      timeout: 900

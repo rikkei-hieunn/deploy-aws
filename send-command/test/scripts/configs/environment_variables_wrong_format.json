@@ -1,7 +1,0 @@
-{
-  "TickSystem": {
-    "TK_SYSTEM_GROUP_DEFINITION_KEI1_OBJECT": 2503,
-    "TK_SYSTEM_GROUP_DEFINITION_KEI2_OBJECT": "environment_variables/groups_definition_second_kei.json",
-    "TK_SYSTEM_DEVELOP_ENVIRONMENT": "abc"
-  }
-}

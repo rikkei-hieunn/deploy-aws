@@ -1,6 +1,0 @@
-{
-  "TickSystem": {
-    "TK_SYSTEM_DATABASE_STATUS_DEFINITION_OBJECT": "environment_variables/database_status_definition.json",
-    "TK_SYSTEM_DEVELOP_ENVIRONMENT": true
-  }
-}

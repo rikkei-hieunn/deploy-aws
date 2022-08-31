@@ -1,9 +1,0 @@
-{
-  "TickSystem": {
-    "TK_SYSTEM_CALENDAR1_FILE_NAME": "calendar_file1.csv",
-    "TK_SYSTEM_CALENDAR2_FILE_NAME": "calendar_file2.csv",
-    "TK_SYSTEM_SHARE_INFORMATION_OBJECT": "environment_variables/common_variables.json",
-    "TK_SYSTEM_FILEBUS_DEFINITION_OBJECT": "environment_variables/filebus_definition.json",
-    "TK_SYSTEM_DEVELOP_ENVIRONMENT": "abc"
-  }
-}
