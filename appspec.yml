@@ -1,9 +1,18 @@
 version: 0.0
-os: windows
+os: linux
 files:
-  - source: \index.html
-    destination: C:\inetpub\wwwroot
+  - source: /index.html
+    destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - location: \before-install.bat
-      timeout: 900
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: root
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
+
