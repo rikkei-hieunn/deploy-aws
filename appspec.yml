@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /home/ec2-use/nodep/
-    overwirte: yes
-permissions:
-   - object: /home/ec2-use/nodep/
-   parrtern: "**"
-   owner: ec2-use
-   group: ec2-use
-    mode:755
-  hooks:
-  AfterInstall:
-    - location: scripts/run_node_sever.sh
-      timeout: 180
-      runas: ec2-use
+  - source: /index.html
+    destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: root
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
 
