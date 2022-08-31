@@ -1,0 +1,11 @@
+{
+  "TickSystem": {
+    "TK_SYSTEM_PATH_NEW_CRON_TABS": "test/output/create_cron_jobs.sh",
+    "TK_SYSTEM_PATH_START_BP03": "CodeGo/ExecuteCommand/a.sh",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI1_OBJECT": "environment_variables/quote_code_definition_tick_kei1.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI2_OBJECT": "environment_variables/quote_code_definition_tick_kei2.json",
+    "TK_SYSTEM_ONE_MINUTE_OPERATOR_CONFIG_DEFINITION_OBJECT": "environment_variables/one_minute_operation_configs.json",
+    "TK_SYSTEM_SHARE_INFORMATION_OBJECT": "environment_variables/common_variables.json",
+    "TK_SYSTEM_DEVELOP_ENVIRONMENT": true
+  }
+}

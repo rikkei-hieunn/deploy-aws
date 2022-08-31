@@ -1,0 +1,341 @@
+{
+  "TickDB": {
+    "TK_DB_PORT": 3306,
+    "TK_DB_USER": "admin",
+    "TK_DB_PASSWORD": "123456123",
+    "TK_DB_MAX_OPEN_CONNECTION": 100,
+    "TK_DB_MAX_IDLE_CONNECTION": 100,
+    "TK_DB_DRIVER_NAME": "mysql",
+    "TK_DB_RETRY_TIMES": 3,
+    "TK_DB_RETRY_WAIT_MS": 3000
+  },
+  "HigaElement": {
+    "TK_DB_HIGA_ELEMENTS": [
+      {
+        "ELEMENT": "QCD",
+        "LENGTH": 42
+      },
+      {
+        "ELEMENT": "ZXD",
+        "LENGTH": 10
+      },
+      {
+        "ELEMENT": "SS1O",
+        "LENGTH": 5
+      },
+      {
+        "ELEMENT": "SS1C",
+        "LENGTH": 5
+      },
+      {
+        "ELEMENT": "SS2O",
+        "LENGTH": 5
+      },
+      {
+        "ELEMENT": "SS2C",
+        "LENGTH": 5
+      },
+      {
+        "ELEMENT": "SS3O",
+        "LENGTH": 5
+      },
+      {
+        "ELEMENT": "SS3C",
+        "LENGTH": 5
+      },
+      {
+        "ELEMENT": "TZ",
+        "LENGTH": 6
+      }
+    ]
+  },
+  "TableNamePrefix": [
+    {
+      "DataType": 0,
+      "Prefix": "business_day_information_data"
+    },
+    {
+      "DataType": 1,
+      "Prefix": "best_quote_data"
+    },
+    {
+      "DataType": 2,
+      "Prefix": "multiple_quote_data"
+    },
+    {
+      "DataType": 3,
+      "Prefix": "master_quote_data"
+    },
+    {
+      "DataType": 4,
+      "Prefix": "money_flow_data"
+    },
+    {
+      "DataType": 5,
+      "Prefix": "option_extended_data"
+    },
+    {
+      "DataType": 6,
+      "Prefix": "index_trading_data"
+    }
+  ],
+  "ReceiveCommon": {
+    "TK_SYSTEM_SERVICE_NAME": "tck-app-receive",
+    "TK_SYSTEM_COMMAND_DEFINITION": {
+      "LLS": {
+        "1": {
+          "OperationStatus": "LLS"
+        },
+        "3": {
+          "OperationStatus": "LLS"
+        }
+      },
+      "LLT": {
+        "2": {
+          "OperationStatus": "LLT"
+        },
+        "4": {
+          "OperationStatus": "LLT"
+        }
+      },
+      "LLX": {
+        "0": {
+          "OperationStatus": "LLX"
+        },
+        "1": {
+          "OperationStatus": "LLX"
+        },
+        "2": {
+          "OperationStatus": "LLS"
+        },
+        "3": {
+          "OperationStatus": "LLS"
+        },
+        "4": {
+          "OperationStatus": "LLX"
+        }
+      },
+      "SED": {
+        "0": {
+          "OperationStatus": "SED"
+        },
+        "1": {
+          "OperationStatus": "SED"
+        },
+        "3": {
+          "OperationStatus": "SED"
+        },
+        "4": {
+          "OperationStatus": "SED"
+        }
+      }
+    },
+    "TK_SYSTEM_SPECIAL_STATUS_ELEMENTS": {
+      "AAV": {
+        "StatusElement": "AAV_S"
+      },
+      "ABV": {
+        "StatusElement": "ABV_S"
+      },
+      "GAP1": {
+        "StatusElement": "GAP1_S"
+      },
+      "GAP10": {
+        "StatusElement": "GAP10_S"
+      },
+      "GAP2": {
+        "StatusElement": "GAP2_S"
+      },
+      "GAP3": {
+        "StatusElement": "GAP3_S"
+      },
+      "GAP4": {
+        "StatusElement": "GAP4_S"
+      },
+      "GAP5": {
+        "StatusElement": "GAP5_S"
+      },
+      "GAP6": {
+        "StatusElement": "GAP6_S"
+      },
+      "GAP7": {
+        "StatusElement": "GAP7_S"
+      },
+      "GAP8": {
+        "StatusElement": "GAP8_S"
+      },
+      "GAP9": {
+        "StatusElement": "GAP9_S"
+      },
+      "GAV1": {
+        "StatusElement": "GAV1_S"
+      },
+      "GAV10": {
+        "StatusElement": "GAV10_S"
+      },
+      "GAV2": {
+        "StatusElement": "GAV2_S"
+      },
+      "GAV3": {
+        "StatusElement": "GAV3_S"
+      },
+      "GAV4": {
+        "StatusElement": "GAV4_S"
+      },
+      "GAV5": {
+        "StatusElement": "GAV5_S"
+      },
+      "GAV6": {
+        "StatusElement": "GAV6_S"
+      },
+      "GAV7": {
+        "StatusElement": "GAV7_S"
+      },
+      "GAV8": {
+        "StatusElement": "GAV8_S"
+      },
+      "GAV9": {
+        "StatusElement": "GAV9_S"
+      },
+      "GBP1": {
+        "StatusElement": "GBP1_S"
+      },
+      "GBP10": {
+        "StatusElement": "GBP10_S"
+      },
+      "GBP2": {
+        "StatusElement": "GBP2_S"
+      },
+      "GBP3": {
+        "StatusElement": "GBP3_S"
+      },
+      "GBP4": {
+        "StatusElement": "GBP4_S"
+      },
+      "GBP5": {
+        "StatusElement": "GBP5_S"
+      },
+      "GBP6": {
+        "StatusElement": "GBP6_S"
+      },
+      "GBP7": {
+        "StatusElement": "GBP7_S"
+      },
+      "GBP8": {
+        "StatusElement": "GBP8_S"
+      },
+      "GBP9": {
+        "StatusElement": "GBP9_S"
+      },
+      "GBV1": {
+        "StatusElement": "GBV1_S"
+      },
+      "GBV10": {
+        "StatusElement": "GBV10_S"
+      },
+      "GBV2": {
+        "StatusElement": "GBV2_S"
+      },
+      "GBV3": {
+        "StatusElement": "GBV3_S"
+      },
+      "GBV4": {
+        "StatusElement": "GBV4_S"
+      },
+      "GBV5": {
+        "StatusElement": "GBV5_S"
+      },
+      "GBV6": {
+        "StatusElement": "GBV6_S"
+      },
+      "GBV7": {
+        "StatusElement": "GBV7_S"
+      },
+      "GBV8": {
+        "StatusElement": "GBV8_S"
+      },
+      "GBV9": {
+        "StatusElement": "GBV9_S"
+      },
+      "LAV": {
+        "StatusElement": "LAV_S"
+      },
+      "LBV": {
+        "StatusElement": "LBV_S"
+      },
+      "QOV": {
+        "StatusElement": "QOV_S"
+      },
+      "QUV": {
+        "StatusElement": "QUV_S"
+      }
+    },
+    "TK_SYSTEM_CONDITION_SET_TIME": [
+      "DPS:T",
+      "DPP:T",
+      "DPR:T",
+      "XV:T",
+      "QAP:T",
+      "QAR:T",
+      "AV:T",
+      "QBP:T",
+      "QBR:T",
+      "BV:T",
+      "@TIM"
+    ],
+    "TK_SYSTEM_CONDITION_CHECK_DPS": [
+      "DPP",
+      "DPR",
+      "QAP",
+      "QAR",
+      "QBP",
+      "QBR"
+    ],
+    "TK_SYSTEM_CONDITION_CHECK_DPS_JISHOU": [
+      "DPP",
+      "QAP",
+      "QBP"
+    ],
+    "TK_SYSTEM_SKIP_ELEMENTS_BASIC": [
+      "ZXD",
+      "@TIM",
+      "NO",
+      "NOT"
+    ],
+    "TK_SYSTEM_SKIP_ELEMENTS_JISHOU": [
+      "ZXD"
+    ],
+    "TK_SYSTEM_SKIP_ELEMENTS_EXTEND": [
+      "ZXD"
+    ]
+  },
+  "InsteadOfKubun": {
+    "@": "A1",
+    "@@": "A2"
+  },
+  "MaintenanceManagement": {
+    "TK_MAINTENANCE_MANAGEMENT_TABLE_NAME": "maintenance_management",
+    "TK_MAINTENANCE_MANAGEMENT_KEI1_ENDPOINT": "127.0.0.1",
+    "TK_MAINTENANCE_MANAGEMENT_KEI1_DBNAME": "tick",
+    "TK_MAINTENANCE_MANAGEMENT_KEI2_ENDPOINT": "127.0.0.1",
+    "TK_MAINTENANCE_MANAGEMENT_KEI2_DBNAME": "tick"
+  },
+  "MeigaraInfoHistories": {
+    "TK_MEIGARA_INFO_HISTORIES_TABLE_NAME": "meigara_info_histories",
+    "TK_MEIGARA_INFO_HISTORIES_KEI1_ENDPOINT": "127.0.0.1",
+    "TK_MEIGARA_INFO_HISTORIES_KEI1_DBNAME": "tick",
+    "TK_MEIGARA_INFO_HISTORIES_KEI2_ENDPOINT": "127.0.0.1",
+    "TK_MEIGARA_INFO_HISTORIES_KEI2_DBNAME": "tick"
+  },
+  "CalendarInfo": {
+    "TK_CALENDAR_TABLE_NAME": "calendar_infos",
+    "TK_CALENDAR_KEI1_ENDPOINT": "127.0.0.1",
+    "TK_CALENDAR_KEI1_DBNAME": "tick",
+    "TK_CALENDAR_KEI2_ENDPOINT": "127.0.0.1",
+    "TK_CALENDAR_KEI2_DBNAME": "tick"
+  },
+  "OneMinuteCommon": {
+    "TK_CANDLE_MANAGEMENT_TABLE_NAME": "candle_management",
+    "TK_ONE_MINUTE_DATA_TABLE_NAME": "one_minute_data"
+  }
+}

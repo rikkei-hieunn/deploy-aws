@@ -1,0 +1,13 @@
+{
+  "TickSystem": {
+    "TK_SYSTEM_TOIAWASE_INFO_LOG_PATH": "rikkei-work/20220815/BP-04_Logs/Info/",
+    "TK_SYSTEM_TOIAWASE_ERROR_LOG_PATH": "rikkei-work/20220815/BP-04_Logs/Error/",
+    "TK_SYSTEM_TOIAWASE_OUTPUT_LOG_PATH": "rikkei-work/20220815/BP-04_Logs/Output/",
+    "TK_SYSTEM_PORT": [
+      "9000",
+      "9001",
+      "9002"
+    ],
+    "TK_SYSTEM_SYUBETU_INFORMATION_DEFINITION": "environment_variables/suybetu_information_definition.json"
+  }
+}

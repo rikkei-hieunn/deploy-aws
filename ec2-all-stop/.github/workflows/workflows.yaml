@@ -1,0 +1,91 @@
+# ************** Workflow description **************
+# Trigger:
+#   - push
+# Jobs:
+#   - Run CI (lint -> test)
+# **************************************************
+
+name: CI-CD-Workflows
+
+on:
+  push:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  # **************************************************
+  # ----- Run CI
+  # **************************************************
+  run-ci:
+    # Run on github Ubuntu Linux VM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v3
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          # Required: the version of golangci-lint is required and must be specified without patch version: we always use the latest patch version.
+          version: v1.44
+      - name: Run unit test scripts
+        # Recursive run all *_test.go file
+        run: go test -v ./...
+
+#  run-cd:
+#    # Depend on CI job
+#    needs: run-ci
+#    # Only run this job when trigger came from main
+#    if: contains('refs/heads/main; refs/heads/date-diff;', github.ref)
+#
+#    runs-on: ubuntu-latest
+#    timeout-minutes: 10
+#
+#    env:
+#      TCK_APP_RECEIVE_NAME: tck-app-receive
+#      TCK_APP_DEPLOY_GROUP: tck-app-receive-dev-grp
+#      TCK_APP_DEPLOY_S3_BUCKET: d-s3-quick-tck-system
+#
+#    steps:
+#      - name: Check out source code
+#        uses: actions/checkout@v2
+#
+#      - name: Prepare variables
+#        id: vars
+#        run: |
+#          echo "::set-output name=git_sha_short::$(git rev-parse --short HEAD)"
+#          echo "::set-output name=current_date::$(date +'%Y-%m-%d')"
+#
+#      - uses: actions/setup-go@v2
+#        with:
+#          go-version: '^1.17'
+#
+#      - name: Build application
+#        run: |
+#          mkdir -p deploy
+#          CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -ldflags="-w -s" -o ./${{env.TCK_APP_RECEIVE_NAME}} cmd/main.go
+#          tar -czvf ${{env.TCK_APP_RECEIVE_NAME}}.arm64.tar.gz ./${{env.TCK_APP_RECEIVE_NAME}}
+#          mv ${{env.TCK_APP_RECEIVE_NAME}}.arm64.tar.gz ./deploy/
+#
+#      - name: Configure AWS Credentials for main
+#        uses: aws-actions/configure-aws-credentials@v1
+#        with:
+#          aws-region: ap-northeast-1
+#          role-to-assume: ${{ secrets.AWS_ASSUME_ROLE_ARN_D_3102_ADMIN }}
+#          role-duration-seconds: 1200
+#
+#      - name: Upload built binary to S3
+#        run: |
+#          aws s3 sync ./deploy/ s3://${{env.TCK_APP_DEPLOY_S3_BUCKET}}/${{env.TCK_APP_RECEIVE_NAME}}/${{ steps.vars.outputs.current_date }}/${{ steps.vars.outputs.git_sha_short }}/
+#          aws s3 sync ./deploy/ s3://${{env.TCK_APP_DEPLOY_S3_BUCKET}}/${{env.TCK_APP_RECEIVE_NAME}}/latest/
+#
+#      - name: Create CodeDeploy Deployment
+#        id: deploy
+#        run: |
+#          aws deploy create-deployment \
+#            --application-name ${{env.TCK_APP_RECEIVE_NAME}} \
+#            --deployment-group-name ${{env.TCK_APP_DEPLOY_GROUP}} \
+#            --deployment-config-name CodeDeployDefault.OneAtATime \
+#            --github-location repository=${{ github.repository }},commitId=${{ github.sha }}

@@ -1,0 +1,30 @@
+{
+  "CX3": [
+    {
+      "TKLOGIC_ID": "CX30",
+      "QKBN": "E",
+      "SNDC": "CXJ",
+      "NUMBER_RANGES": {
+        "TKSTART_PROPERNAME": "5",
+        "TKEND_PROPERNAME": "6"
+      },
+      "TKDB_MASTER_ENDPOINT": "127.0.0.1",
+      "TKDB_REPLICA_ENDPOINT": "",
+      "TKDBNAME": "tick"
+    }
+  ],
+  "CX4": [
+    {
+      "TKLOGIC_ID": "CX40",
+      "QKBN": "E",
+      "SNDC": "CXJ",
+      "NUMBER_RANGES": {
+        "TKSTART_PROPERNAME": "8",
+        "TKEND_PROPERNAME": "9"
+      },
+      "TKDB_MASTER_ENDPOINT": "127.0.0.1",
+      "TKDB_REPLICA_ENDPOINT": "",
+      "TKDBNAME": "tick"
+    }
+  ]
+}
