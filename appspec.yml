@@ -2,17 +2,17 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/nodep/
+    destination: /home/ec2-user/
 hooks:
   BeforeInstall:
-    - location: shell_scripts/ALLLLD.sh
+    - location: scripts/install_dependencies
       timeout: 180
-      runas: ec2-user
+      runas: root
     - location: shell_scripts/ALLLLX.sh
       timeout: 180
-      runas: ec2-user
+      runas: root
   ApplicationStop:
     - location: shell_scripts/BACKUP.sh
       timeout: 180
-      runas: ec2-user
+      runas: root
 
