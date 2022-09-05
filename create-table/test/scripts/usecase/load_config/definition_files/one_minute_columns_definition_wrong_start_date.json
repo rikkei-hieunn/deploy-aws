@@ -1,0 +1,19 @@
+[
+  {
+    "TKQKBN": "E",
+    "TKELEMENTS": [
+      {
+        "ELEMENT": "QCD",
+        "COLUMN": "QCD",
+        "LENGTH": 42
+      },
+      {
+        "ELEMENT": "TIME",
+        "COLUMN": "TIME",
+        "LENGTH": 5
+      }
+    ],
+    "TKSTART_DATE": "abc",
+    "TKEND_DATE": "2030/05/10"
+  }
+]

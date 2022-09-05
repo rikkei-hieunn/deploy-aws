@@ -1,0 +1,10 @@
+{
+  "TickSystem": {
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI1_OBJECT": "environment_variables/quote_code_definition_tick_kei1.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_KEHAI_KEI1_OBJECT": "environment_variables/quote_code_definition_kehai_kei1.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI2_OBJECT": "environment_variables/quote_code_definition_tick_kei2.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_KEHAI_KEI2_OBJECT": "environment_variables/quote_code_definition_kehai_kei2.json",
+    "TK_SYSTEM_DATABASE_STATUS_DEFINITION_OBJECT": "environment_variables/database_status_definition.json",
+    "TK_SYSTEM_DEVELOP_ENVIRONMENT": true
+  }
+}

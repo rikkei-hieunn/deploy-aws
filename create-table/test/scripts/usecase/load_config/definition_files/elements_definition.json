@@ -1,0 +1,82 @@
+{
+  "@": {
+    "1": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "",
+      "TKQKBN_INSTEAD": "A1",
+      "TKCHARACTER_CONVERT_FLAG": true
+    },
+    "2": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "",
+      "TKQKBN_INSTEAD": "",
+      "TKCHARACTER_CONVERT_FLAG": true
+    },
+    "3": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "",
+      "TKQKBN_INSTEAD": "",
+      "TKCHARACTER_CONVERT_FLAG": true
+    },
+    "4": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "",
+      "TKQKBN_INSTEAD": "",
+      "TKCHARACTER_CONVERT_FLAG": true
+    },
+    "5": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "",
+      "TKQKBN_INSTEAD": "",
+      "TKCHARACTER_CONVERT_FLAG": true
+    },
+    "6": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "3022/05/10",
+      "TKQKBN_INSTEAD": "",
+      "TKCHARACTER_CONVERT_FLAG": true
+    }
+  }
+}
