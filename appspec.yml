@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 180
+      runas: root
+
+
