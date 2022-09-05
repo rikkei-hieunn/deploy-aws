@@ -3,12 +3,6 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/nodep/
-permissions:
- -  object: /home/ec2-user/nodep/
-    pattern:"**"
-    owner:ec2-user
-    group:ec2-user
-    mode:755
 hooks:
   BeforeInstall:
     - location: shell_scripts/ALLLLD.sh
