@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /kanshi-process/cmd/main.go
     destination: /home/ec2-user/
 hooks:
   BeforeInstall:
@@ -12,7 +12,7 @@ hooks:
       timeout: 180
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server
+    - location: shell_scripts/BACKUP.sh
       timeout: 180
       runas: root
 
