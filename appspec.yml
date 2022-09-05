@@ -8,7 +8,7 @@ hooks:
     - location: scripts/install_dependencies
       timeout: 180
       runas: root
-    - location: shell_scripts/ALLLLX.sh
+    - location: scripts/start_server
       timeout: 180
       runas: root
   ApplicationStop:
