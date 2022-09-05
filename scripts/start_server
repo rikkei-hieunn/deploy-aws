@@ -1,4 +1,3 @@
 #!/bin/bash
-cd .\kanshi-process\
 go run .\cmd\main.go
 
