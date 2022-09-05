@@ -3,14 +3,21 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/nodep/
- permissions:
+permissions:
  -  object: /home/ec2-user/nodep/
     pattern:"**"
     owner:ec2-user
     group:ec2-user
     mode:755
 hooks:
-ApplicationStop:
+  BeforeInstall:
+    - location: shell_scripts/ALLLLD.sh
+      timeout: 180
+      runas: ec2-user
+    - location: shell_scripts/ALLLLX.sh
+      timeout: 180
+      runas: ec2-user
+  ApplicationStop:
     - location: shell_scripts/BACKUP.sh
       timeout: 180
       runas: ec2-user
