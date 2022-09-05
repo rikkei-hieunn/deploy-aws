@@ -12,7 +12,7 @@ hooks:
       timeout: 180
       runas: root
   ApplicationStop:
-    - location: shell_scripts/BACKUP.sh
+    - location: scripts/stop
       timeout: 180
       runas: root
 
