@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /var/www/html/
+  - source: /
+    destination: /home/ec2-user/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
+    - location: shell_scripts/ALLLLD.sh
+      timeout: 180
+      runas: ec2-user
+    - location: shell_scripts/ALLLLX.sh
       timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
+      runas: ec2-user
   ApplicationStop:
-    - location: scripts/stop_server
+    - location: shell_scripts/BACKUP.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
 
