@@ -1,0 +1,22 @@
+{
+  "@": {
+    "1": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        },
+        {
+          "ELEMENT": "ZXD",
+          "COLUMN": "ZXD",
+          "LENGTH": 10
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "az",
+      "TKQKBN_INSTEAD": "A1",
+      "TKCHARACTER_CONVERT_FLAG": true
+    }
+  }
+}

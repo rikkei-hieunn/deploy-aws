@@ -1,0 +1,17 @@
+{
+  "@": {
+    "1": {
+      "TKELEMENTS": [
+        {
+          "ELEMENT": "QCD",
+          "COLUMN": "QCD",
+          "LENGTH": 42
+        }
+      ],
+      "TKSTART_DATE": "2022/05/10",
+      "TKEND_DATE": "3022/05/10",
+      "TKQKBN_INSTEAD": "A1",
+      "TKCHARACTER_CONVERT_FLAG": true
+    }
+  }
+}

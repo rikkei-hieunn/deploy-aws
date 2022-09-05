@@ -1,0 +1,12 @@
+{
+  "TickSystem": {
+    "TK_SYSTEM_GROUP_DEFINITION_KEI1_OBJECT": "environment_variables/groups_definition_first_kei.json",
+    "TK_SYSTEM_GROUP_DEFINITION_KEI2_OBJECT": "environment_variables/groups_definition_second_kei.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI1_OBJECT": "environment_variables/quote_code_definition_tick_kei1.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_KEHAI_KEI1_OBJECT": "environment_variables/quote_code_definition_kehai_kei1.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI2_OBJECT": "environment_variables/quote_code_definition_tick_kei2.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_KEHAI_KEI2_OBJECT": "environment_variables/quote_code_definition_kehai_kei2.json",
+    "TK_SYSTEM_INSTANCE_PATH_ENV_KEY": "TK_JUSHIN_PROCESS_PATH",
+    "TK_SYSTEM_DEVELOP_ENVIRONMENT": true
+  }
+}

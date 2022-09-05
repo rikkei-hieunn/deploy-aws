@@ -1,0 +1,9 @@
+{
+  "TickSystem": {
+    "TK_SYSTEM_SHARE_INFORMATION_OBJECT": 12321,
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI1_OBJECT": "environment_variables/quote_code_definition_tick_kei1.json",
+    "TK_SYSTEM_QUOTE_CODES_DEFINITION_TICK_KEI2_OBJECT": "environment_variables/quote_code_definition_tick_kei2.json",
+    "TK_SYSTEM_START_EC2_SHELL_PATH": "/home/ec2-user/BP-08/start-ecs",
+    "TK_SYSTEM_DEVELOP_ENVIRONMENT": "fads"
+  }
+}
