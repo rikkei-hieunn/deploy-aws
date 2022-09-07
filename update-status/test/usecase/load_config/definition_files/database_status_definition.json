@@ -1,0 +1,30 @@
+{
+  "tick_data": [
+    {
+      "QKBN": "E",
+      "SNDC": "T",
+      "TK_STATUS_KEI1": true,
+      "TK_STATUS_KEI2": true
+    },
+    {
+      "QKBN": "E",
+      "SNDC": "M",
+      "TK_STATUS_KEI1": true,
+      "TK_STATUS_KEI2": true
+    }
+  ],
+  "kehai_data": [
+    {
+      "QKBN": "E",
+      "SNDC": "T",
+      "TK_STATUS_KEI1": true,
+      "TK_STATUS_KEI2": true
+    },
+    {
+      "QKBN": "E",
+      "SNDC": "M",
+      "TK_STATUS_KEI1": true,
+      "TK_STATUS_KEI2": true
+    }
+  ]
+}
