@@ -1,9 +1,0 @@
-{
-  "TickSystem": {
-    "TK_SYSTEM_GROUP_DEFINITION_OBJECT": "environment_variables/groups_definition.json",
-    "TK_SYSTEM_MESSAGE_COUNT_LOG_KEI1_PATH": "environment_variables/kei1",
-    "TK_SYSTEM_MESSAGE_COUNT_LOG_KEI2_PATH": "environment_variables/kei2",
-    "TK_SYSTEM_NUMBER_PERCENT_ALERT": 20,
-    "TK_SYSTEM_DEVELOP_ENVIRONMENT": true
-  }
-}
