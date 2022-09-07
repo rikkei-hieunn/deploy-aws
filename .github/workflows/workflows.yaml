@@ -1,3 +1,16 @@
+# ************** Workflow description **************
+# Trigger:
+#   - push
+# Jobs:
+#   - Run CI (lint -> test)
+# **************************************************
+
+name: CI-CD-Workflows
+
+on:
+  push:
+
+jobs:
   # **************************************************
   # -------------------- Run CI----------------------*
   # **************************************************
@@ -6,21 +19,18 @@
     runs-on: ubuntu-latest
 
     steps:
-      # Check out source code
       - name: Check out source code
         uses: actions/checkout@v3
-      # Setup Golang-lint and run Golang-lint
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
           # Required: the version of golangci-lint is required and must be specified without patch version: we always use the latest patch version.
           version: v1.44
-      # Run UT test
       - name: Run unit test scripts
         # Recursive run all *_test.go file
         run: go test -v ./...
-        
- # **************************************************
+
+  # **************************************************
   # -------------------- Run CD----------------------*
   # **************************************************
   run-cd:
@@ -51,6 +61,10 @@
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-duration-seconds: 1200
 
+      - name: Upload to S3
+        run: |
+          aws s3 sync environment_variables/ s3://${{env.DEPLOY_S3_BUCKET_NAME}}/environment_variables/
+
       - name: Create CodeDeploy Deployment
         id: deploy
         run: |
@@ -60,3 +74,5 @@
             --deployment-config-name CodeDeployDefault.OneAtATime \
             --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
 #            --s3-location bucket=${{env.DEPLOY_S3_BUCKET_NAME}},bundleType="tgz",key="${{env.APPLICATION_NAME}}/latest/sample-test-cicd.arm64.tar.gz"
+
+# End
