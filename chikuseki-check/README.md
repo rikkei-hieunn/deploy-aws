@@ -1,1 +1,0 @@
-# chikuseki-check
