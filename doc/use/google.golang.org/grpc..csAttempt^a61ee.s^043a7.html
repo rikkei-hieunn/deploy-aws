@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.csAttempt.s</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/stream.go.html#line-531">csAttempt</a>.<a href="../../src/google.golang.org/grpc/stream.go.html#line-535">s</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">35 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/rpc_util.go.html#line-211">rpc_util.go#L211</a>: 	*o.HeaderAddr, _ = attempt.<b>s</b>.Header()
+		<a href="../../src/google.golang.org/grpc/rpc_util.go.html#line-233" class="path-duplicate">rpc_util.go</a><a href="../../src/google.golang.org/grpc/rpc_util.go.html#line-233">#L233</a>: 	*o.TrailerAddr = attempt.<b>s</b>.Trailer()
+		<a href="../../src/google.golang.org/grpc/rpc_util.go.html#line-255" class="path-duplicate">rpc_util.go</a><a href="../../src/google.golang.org/grpc/rpc_util.go.html#line-255">#L255</a>: 	if x, ok := peer.FromContext(attempt.<b>s</b>.Context()); ok {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-473">stream.go#L473</a>: 	a.<b>s</b> = s
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-535" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-535">#L535</a>: 	<b>s</b>    *transport.Stream
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-583" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-583">#L583</a>: 	if a.<b>s</b> == nil &amp;&amp; a.allowTransparentRetry {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-588" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-588">#L588</a>: 	if a.<b>s</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-589" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-589">#L589</a>: 		&lt;-a.<b>s</b>.Done()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-590" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-590">#L590</a>: 		unprocessed = a.<b>s</b>.Unprocessed()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-602" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-602">#L602</a>: 	if a.<b>s</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-603" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-603">#L603</a>: 		if !a.<b>s</b>.TrailersOnly() {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-609" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-609">#L609</a>: 		sps := a.<b>s</b>.Trailer()["grpc-retry-pushback-ms"]
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-626" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-626">#L626</a>: 	if a.<b>s</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-627" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-627">#L627</a>: 		code = a.<b>s</b>.Status().Code()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-701" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-701">#L701</a>: 	if cs.attempt.<b>s</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-702" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-702">#L702</a>: 		return cs.attempt.<b>s</b>.Context()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-739" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-739">#L739</a>: 			&lt;-a.<b>s</b>.Done()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-741" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-741">#L741</a>: 		if err == nil || (err == io.EOF &amp;&amp; a.<b>s</b>.Status().Code() == codes.OK) {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-758" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-758">#L758</a>: 		m, err = a.<b>s</b>.Header()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-799" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-799">#L799</a>: 	if cs.attempt.<b>s</b> == nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-802" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-802">#L802</a>: 	return cs.attempt.<b>s</b>.Trailer()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-924" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-924">#L924</a>: 		a.t.Write(a.<b>s</b>, nil, nil, &amp;transport.Options{Last: true})
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-959" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-959">#L959</a>: 		if cs.attempt.<b>s</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1001" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1001">#L1001</a>: 	if err := a.t.Write(a.<b>s</b>, hdr, payld, &amp;transport.Options{Last: !cs.desc.ClientStreams}); err != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1027" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1027">#L1027</a>: 		if ct := a.<b>s</b>.RecvCompress(); ct != "" &amp;&amp; ct != encoding.Identity {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1041" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1041">#L1041</a>: 	err = recv(a.p, cs.codec, a.<b>s</b>, a.dc, m, *cs.callInfo.maxReceiveMessageSize, payInfo, a.decomp)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1044" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1044">#L1044</a>: 			if statusErr := a.<b>s</b>.Status().Err(); statusErr != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1079" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1079">#L1079</a>: 	err = recv(a.p, cs.codec, a.<b>s</b>, a.dc, m, *cs.callInfo.maxReceiveMessageSize, nil, a.decomp)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1084" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1084">#L1084</a>: 		return a.<b>s</b>.Status().Err() // non-server streaming Recv returns nil on success
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1101" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1101">#L1101</a>: 	if a.<b>s</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1102" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1102">#L1102</a>: 		a.t.CloseStream(a.<b>s</b>, err)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1103" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1103">#L1103</a>: 		tr = a.<b>s</b>.Trailer()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1108" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1108">#L1108</a>: 		if a.<b>s</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1109" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1109">#L1109</a>: 			br = a.<b>s</b>.BytesReceived()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1114" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1114">#L1114</a>: 			BytesSent:     a.<b>s</b> != nil,
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/tools/internal/gcimporter.importReader.uint64</title>
+<link href="../../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/golang.org/x/tools/internal/gcimporter.html">golang.org/x/tools/internal/gcimporter</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-401">importReader</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-874">uint64</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">17 uses</span>
+
+	golang.org/x/tools/internal/gcimporter (current package)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-446">iimport.go#L446</a>: 		underlying := r.p.typAt(r.<b>uint64</b>(), named).Underlying()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-450" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-450">#L450</a>: 			for n := r.<b>uint64</b>(); n &gt; 0; n-- {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-685" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-685">#L685</a>: 	return r.p.typAt(r.<b>uint64</b>(), nil)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-693" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-693">#L693</a>: func (r *importReader) pkg() *types.Package { return r.p.pkgAt(r.<b>uint64</b>()) }
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-694" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-694">#L694</a>: func (r *importReader) string() string      { return r.p.stringAt(r.<b>uint64</b>()) }
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-720" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-720">#L720</a>: 		n := r.<b>uint64</b>()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-723" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-723">#L723</a>: 		dir := chanDir(int(r.<b>uint64</b>()))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-734" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-734">#L734</a>: 		fields := make([]*types.Var, r.<b>uint64</b>())
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-751" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-751">#L751</a>: 		embeddeds := make([]types.Type, r.<b>uint64</b>())
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-757" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-757">#L757</a>: 		methods := make([]*types.Func, r.<b>uint64</b>())
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-798" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-798">#L798</a>: 		len := r.<b>uint64</b>()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-814" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-814">#L814</a>: 		terms := make([]*typeparams.Term, r.<b>uint64</b>())
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-823" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-823">#L823</a>: 	return itag(r.<b>uint64</b>())
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-834" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-834">#L834</a>: 	n := r.<b>uint64</b>()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-848" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-848">#L848</a>: 	xs := make([]*types.Var, r.<b>uint64</b>())
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-863" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-863">#L863</a>: 	return r.<b>uint64</b>() != 0
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-874" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-874">#L874</a>: func (r *importReader) <b>uint64</b>() uint64 {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

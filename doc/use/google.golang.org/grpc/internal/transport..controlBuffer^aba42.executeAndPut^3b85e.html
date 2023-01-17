@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.controlBuffer.executeAndPut</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-287">controlBuffer</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-329">executeAndPut</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">8 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-325">controlbuf.go#L325</a>: 	_, err := c.<b>executeAndPut</b>(nil, it)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-329" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-329">#L329</a>: func (c *controlBuffer) <b>executeAndPut</b>(f func(it interface{}) bool, it cbItem) (bool, error) {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-803">http2_client.go#L803</a>: 		success, err := t.controlBuf.<b>executeAndPut</b>(func(it interface{}) bool {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-919" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-919">#L919</a>: 	t.controlBuf.<b>executeAndPut</b>(addBackStreamQuota, cleanup)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1062" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1062">#L1062</a>: 	t.controlBuf.<b>executeAndPut</b>(updateIWS, &amp;outgoingWindowUpdate{streamID: 0, increment: t.fc.newLimit(n)})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1206" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1206">#L1206</a>: 	t.controlBuf.<b>executeAndPut</b>(func(interface{}) bool {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-829">http2_server.go#L829</a>: 	t.controlBuf.<b>executeAndPut</b>(func(interface{}) bool {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-981" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-981">#L981</a>: 	success, err := t.controlBuf.<b>executeAndPut</b>(t.checkForHeaderListSize, &amp;headerFrame{
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

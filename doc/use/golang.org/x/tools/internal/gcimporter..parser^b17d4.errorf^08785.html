@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/tools/internal/gcimporter.parser.errorf</title>
+<link href="../../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/golang.org/x/tools/internal/gcimporter.html">golang.org/x/tools/internal/gcimporter</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-312">parser</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-387">errorf</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">13 uses</span>
+
+	golang.org/x/tools/internal/gcimporter (current package)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-387">gcimporter.go#L387</a>: func (p *parser) <b>errorf</b>(format string, args ...interface{}) {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-394" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-394">#L394</a>: 		p.<b>errorf</b>("expected %s, got %s (%s)", scanner.TokenString(tok), scanner.TokenString(p.tok), lit)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-409" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-409">#L409</a>: 		p.<b>errorf</b>("expected %q, got %q", tok, tok[0:i])
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-416" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-416">#L416</a>: 		p.<b>errorf</b>("expected keyword %s, got %q", keyword, lit)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-517" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-517">#L517</a>: 			p.<b>errorf</b>("%s package name mismatch: %s (given) vs %s (expected)", id, pname, name)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-543" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-543">#L543</a>: 	p.<b>errorf</b>("not a basic type: %s", id)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-650" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-650">#L650</a>: 			p.<b>errorf</b>("anonymous field expected")
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-660" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-660">#L660</a>: 			p.<b>errorf</b>("invalid struct tag %s: %s", s, err)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-869" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-869">#L869</a>: 	p.<b>errorf</b>("expected type, got %s (%q)", scanner.TokenString(p.tok), p.lit)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1004" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1004">#L1004</a>: 		p.<b>errorf</b>("expected literal got %s", scanner.TokenString(p.tok))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1151" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1151">#L1151</a>: 		p.<b>errorf</b>("expected '$$', got %s %c", scanner.TokenString(p.tok), ch)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1155" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1155">#L1155</a>: 		p.<b>errorf</b>("expected no scanner errors, got %d", n)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1162" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1162">#L1162</a>: 			p.<b>errorf</b>("%s package has no name", id)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

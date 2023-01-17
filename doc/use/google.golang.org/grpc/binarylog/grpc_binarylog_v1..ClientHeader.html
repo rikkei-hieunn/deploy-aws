@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/binarylog/grpc_binarylog_v1.ClientHeader</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/google.golang.org/grpc/binarylog/grpc_binarylog_v1.html">google.golang.org/grpc/binarylog/grpc_binarylog_v1</a>.<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-425">ClientHeader</a></b></span>
+
+<span class="title">16 uses</span>
+
+	google.golang.org/grpc/binarylog/grpc_binarylog_v1 (current package)
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-354">binarylog.pb.go#L354</a>: func (x *GrpcLogEntry) GetClientHeader() *<b>ClientHeader</b> {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-401" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-401">#L401</a>: 	ClientHeader *<b>ClientHeader</b> `protobuf:"bytes,6,opt,name=client_header,json=clientHeader,proto3,oneof"`
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-425" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-425">#L425</a>: type <b>ClientHeader</b> struct {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-446" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-446">#L446</a>: func (x *<b>ClientHeader</b>) Reset() {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-447" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-447">#L447</a>: 	*x = <b>ClientHeader</b>{}
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-455" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-455">#L455</a>: func (x *<b>ClientHeader</b>) String() string {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-459" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-459">#L459</a>: func (*<b>ClientHeader</b>) ProtoMessage() {}
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-461" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-461">#L461</a>: func (x *<b>ClientHeader</b>) ProtoReflect() protoreflect.Message {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-474" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-474">#L474</a>: func (*<b>ClientHeader</b>) Descriptor() ([]byte, []int) {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-478" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-478">#L478</a>: func (x *<b>ClientHeader</b>) GetMetadata() *Metadata {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-485" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-485">#L485</a>: func (x *<b>ClientHeader</b>) GetMethodName() string {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-492" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-492">#L492</a>: func (x *<b>ClientHeader</b>) GetAuthority() string {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-499" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-499">#L499</a>: func (x *<b>ClientHeader</b>) GetTimeout() *durationpb.Duration {
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-1028" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-1028">#L1028</a>: 	(*<b>ClientHeader</b>)(nil),          // 4: grpc.binarylog.v1.ClientHeader
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-1079" class="path-duplicate">binarylog.pb.go</a><a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-1079">#L1079</a>: 			switch v := v.(*<b>ClientHeader</b>); i {
+
+	<a href="../../../../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-165">method_logger.go#L165</a>: 	clientHeader := &amp;pb.<b>ClientHeader</b>{
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

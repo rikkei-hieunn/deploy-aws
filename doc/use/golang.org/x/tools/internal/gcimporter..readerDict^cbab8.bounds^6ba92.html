@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/tools/internal/gcimporter.readerDict.bounds</title>
+<link href="../../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/golang.org/x/tools/internal/gcimporter.html">golang.org/x/tools/internal/gcimporter</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-140">readerDict</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-143">bounds</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	golang.org/x/tools/internal/gcimporter (current package)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-143">ureader_yes.go#L143</a>: 	<b>bounds</b> []typeInfo
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-624" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-624">#L624</a>: 		dict.<b>bounds</b> = make([]typeInfo, r.Len())
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-625" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-625">#L625</a>: 		for i := range dict.<b>bounds</b> {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-626" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-626">#L626</a>: 			dict.<b>bounds</b>[i] = r.typInfo()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-650" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-650">#L650</a>: 	if len(r.dict.<b>bounds</b>) == 0 {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-659" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-659">#L659</a>: 	r.dict.tparams = make([]*types.TypeParam, len(r.dict.<b>bounds</b>))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-660" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-660">#L660</a>: 	for i := range r.dict.<b>bounds</b> {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-668" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-668">#L668</a>: 	typs := make([]types.Type, len(r.dict.<b>bounds</b>))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-669" class="path-duplicate">ureader_yes.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/ureader_yes.go.html#line-669">#L669</a>: 	for i, bound := range r.dict.<b>bounds</b> {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: text/scanner.Scanner.srcEnd</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/text/scanner.html">text/scanner</a>.<a href="../../src/text/scanner/scanner.go.html#line-117">Scanner</a>.<a href="../../src/text/scanner/scanner.go.html#line-124">srcEnd</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	text/scanner (current package)
+		<a href="../../src/text/scanner/scanner.go.html#line-124">scanner.go#L124</a>: 	<b>srcEnd</b> int              // source end (srcBuf index)
+		<a href="../../src/text/scanner/scanner.go.html#line-189" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-189">#L189</a>: 	s.<b>srcEnd</b> = 0
+		<a href="../../src/text/scanner/scanner.go.html#line-224" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-224">#L224</a>: 		for s.srcPos+utf8.UTFMax &gt; s.<b>srcEnd</b> &amp;&amp; !utf8.FullRune(s.srcBuf[s.srcPos:s.<b>srcEnd</b>]) {
+		<a href="../../src/text/scanner/scanner.go.html#line-233" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-233">#L233</a>: 			copy(s.srcBuf[0:], s.srcBuf[s.srcPos:s.<b>srcEnd</b>])
+		<a href="../../src/text/scanner/scanner.go.html#line-240" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-240">#L240</a>: 			i := s.<b>srcEnd</b> - s.srcPos
+		<a href="../../src/text/scanner/scanner.go.html#line-243" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-243">#L243</a>: 			s.<b>srcEnd</b> = i + n
+		<a href="../../src/text/scanner/scanner.go.html#line-244" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-244">#L244</a>: 			s.srcBuf[s.<b>srcEnd</b>] = utf8.RuneSelf // sentinel
+		<a href="../../src/text/scanner/scanner.go.html#line-249" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-249">#L249</a>: 				if s.<b>srcEnd</b> == 0 {
+		<a href="../../src/text/scanner/scanner.go.html#line-268" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-268">#L268</a>: 			ch, width = utf8.DecodeRune(s.srcBuf[s.srcPos:s.<b>srcEnd</b>])
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

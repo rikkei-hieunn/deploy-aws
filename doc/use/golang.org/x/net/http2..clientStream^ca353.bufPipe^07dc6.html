@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.clientStream.bufPipe</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-355">clientStream</a>.<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-364">bufPipe</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-364">transport.go#L364</a>: 	<b>bufPipe</b>       pipe // buffered pipe with the flow-controlled response payload
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1555" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1555">#L1555</a>: 		cs.<b>bufPipe</b>.CloseWithError(err) // no-op if already closed
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1560" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1560">#L1560</a>: 		cs.<b>bufPipe</b>.CloseWithError(errRequestCanceled)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2457" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2457">#L2457</a>: 	cs.<b>bufPipe</b>.setBuffer(&amp;dataBuffer{expected: res.ContentLength})
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2512" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2512">#L2512</a>: 	n, err = b.cs.<b>bufPipe</b>.Read(p)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2546" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2546">#L2546</a>: 		v := int(cs.inflow.available()) + cs.<b>bufPipe</b>.Len()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2574" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2574">#L2574</a>: 	unread := cs.<b>bufPipe</b>.Len()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2594" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2594">#L2594</a>: 	cs.<b>bufPipe</b>.BreakWithError(errClosedResponseBody)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2684" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2684">#L2684</a>: 			if _, err = cs.<b>bufPipe</b>.Write(data); err != nil {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2733" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2733">#L2733</a>: 		cs.<b>bufPipe</b>.closeWithErrorAndCode(io.EOF, cs.copyTrailers)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2899" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2899">#L2899</a>: 	cs.<b>bufPipe</b>.CloseWithError(serr)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

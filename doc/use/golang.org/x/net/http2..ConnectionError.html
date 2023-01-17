@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.ConnectionError</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-65">ConnectionError</a></b></span>
+
+<span class="title">49 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-65">errors.go#L65</a>: type <b>ConnectionError</b> ErrCode
+		<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-67" class="path-duplicate">errors.go</a><a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-67">#L67</a>: func (e <b>ConnectionError</b>) Error() string { return fmt.Sprintf("connection error: %s", ErrCode(e)) }
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-534">frame.go#L534</a>: 	return <b>ConnectionError</b>(code)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-716" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-716">#L716</a>: 		return nil, <b>ConnectionError</b>(ErrCodeFrameSize)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-727" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-727">#L727</a>: 		return nil, <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-732" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-732">#L732</a>: 		return nil, <b>ConnectionError</b>(ErrCodeFrameSize)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-740" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-740">#L740</a>: 		return nil, <b>ConnectionError</b>(ErrCodeFlowControl)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-851" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-851">#L851</a>: 		return nil, <b>ConnectionError</b>(ErrCodeFrameSize)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-855" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-855">#L855</a>: 		return nil, <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-893" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-893">#L893</a>: 		return nil, <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-897" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-897">#L897</a>: 		return nil, <b>ConnectionError</b>(ErrCodeFrameSize)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-946" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-946">#L946</a>: 		return nil, <b>ConnectionError</b>(ErrCodeFrameSize)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-958" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-958">#L958</a>: 			return nil, <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1205" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1205">#L1205</a>: 		return nil, <b>ConnectionError</b>(ErrCodeFrameSize)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1209" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1209">#L1209</a>: 		return nil, <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1297" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1297">#L1297</a>: 		return nil, <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1319" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1319">#L1319</a>: 		return nil, <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1572" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1572">#L1572</a>: 			return nil, <b>ConnectionError</b>(ErrCodeCompression)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1589" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1589">#L1589</a>: 		return nil, <b>ConnectionError</b>(ErrCodeCompression)
+		<a href="../../../../src/golang.org/x/net/http2/http2.go.html#line-131">http2.go#L131</a>: 			return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/http2.go.html#line-135" class="path-duplicate">http2.go</a><a href="../../../../src/golang.org/x/net/http2/http2.go.html#line-135">#L135</a>: 			return <b>ConnectionError</b>(ErrCodeFlowControl)
+		<a href="../../../../src/golang.org/x/net/http2/http2.go.html#line-139" class="path-duplicate">http2.go</a><a href="../../../../src/golang.org/x/net/http2/http2.go.html#line-139">#L139</a>: 			return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1474">server.go#L1474</a>: 	case <b>ConnectionError</b>:
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1494" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1494">#L1494</a>: 			return sc.countError("first_settings", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1534" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1534">#L1534</a>: 		return sc.countError("push_promise", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1554" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1554">#L1554</a>: 		return sc.countError("ping_on_stream", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1570" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1570">#L1570</a>: 			return sc.countError("stream_idle", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1602" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1602">#L1602</a>: 		return sc.countError("reset_idle_stream", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1665" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1665">#L1665</a>: 			return sc.countError("ack_mystery", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1673" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1673">#L1673</a>: 		return sc.countError("settings_big_or_dups", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1739" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1739">#L1739</a>: 			return sc.countError("setting_win_size", <b>ConnectionError</b>(ErrCodeFlowControl))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1762" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1762">#L1762</a>: 		return sc.countError("data_on_idle", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1917" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1917">#L1917</a>: 		return sc.countError("headers_even", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1945" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1945">#L1945</a>: 		return sc.countError("stream_went_down", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2046" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2046">#L2046</a>: 		return sc.countError("dup_trailers", <b>ConnectionError</b>(ErrCodeProtocol))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-3236" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-3236">#L3236</a>: 	case <b>ConnectionError</b>:
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2125">transport.go#L2125</a>: 	if ce, ok := cc.readerErr.(<b>ConnectionError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2199" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2199">#L2199</a>: 	if ce, ok := err.(<b>ConnectionError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2254" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2254">#L2254</a>: 				return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2322" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2322">#L2322</a>: 		if _, ok := err.(<b>ConnectionError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2474" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2474">#L2474</a>: 		return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2480" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2480">#L2480</a>: 		return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2485" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2485">#L2485</a>: 		return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2621" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2621">#L2621</a>: 			return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2672" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2672">#L2672</a>: 			return <b>ConnectionError</b>(ErrCodeFlowControl)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2804" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2804">#L2804</a>: 		return <b>ConnectionError</b>(ErrCodeProtocol)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2823" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2823">#L2823</a>: 				return <b>ConnectionError</b>(ErrCodeFlowControl)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2877" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2877">#L2877</a>: 		return <b>ConnectionError</b>(ErrCodeFlowControl)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2976" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2976">#L2976</a>: 	return <b>ConnectionError</b>(ErrCodeProtocol)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

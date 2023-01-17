@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.ClientConn.mu</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-295">ClientConn</a>.<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-311">mu</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">76 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-311">transport.go#L311</a>: 	<b>mu</b>              sync.Mutex // guards following
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-416" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-416">#L416</a>: 	cs.cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-417" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-417">#L417</a>: 	defer cs.cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-438" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-438">#L438</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-439" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-439">#L439</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-762" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-762">#L762</a>: 	cc.cond = sync.NewCond(&amp;cc.<b>mu</b>)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-843" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-843">#L843</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-844" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-844">#L844</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-849" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-849">#L849</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-850" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-850">#L850</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-876" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-876">#L876</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-877" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-877">#L877</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-885" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-885">#L885</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-886" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-886">#L886</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-936" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-936">#L936</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-937" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-937">#L937</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-956" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-956">#L956</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-957" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-957">#L957</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1027" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1027">#L1027</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1029" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1029">#L1029</a>: 		cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1035" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1035">#L1035</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1044" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1044">#L1044</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1045" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1045">#L1045</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1060" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1060">#L1060</a>: 		cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1061" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1061">#L1061</a>: 		defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1080" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1080">#L1080</a>: 		cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1084" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1084">#L1084</a>: 		cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1090" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1090">#L1090</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1094" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1094">#L1094</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1116" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1116">#L1116</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1122" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1122">#L1122</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1206" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1206">#L1206</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1207" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1207">#L1207</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1336" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1336">#L1336</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1342" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1342">#L1342</a>: 		cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1350" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1350">#L1350</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1518" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1518">#L1518</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1525" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1525">#L1525</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1671" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1671">#L1671</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1673" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1673">#L1673</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1710" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1710">#L1710</a>: 			cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1712" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1712">#L1712</a>: 			cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1762" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1762">#L1762</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1765" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1765">#L1765</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1800" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1800">#L1800</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1801" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1801">#L1801</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2087" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2087">#L2087</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2111" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2111">#L2111</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2167" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2167">#L2167</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2189" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2189">#L2189</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2535" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2535">#L2535</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2552" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2552">#L2552</a>: 	cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2576" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2576">#L2576</a>: 		cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2581" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2581">#L2581</a>: 		cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2615" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2615">#L2615</a>: 		cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2617" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2617">#L2617</a>: 		cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2630" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2630">#L2630</a>: 			cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2632" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2632">#L2632</a>: 			cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2667" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2667">#L2667</a>: 		cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2671" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2671">#L2671</a>: 			cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2698" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2698">#L2698</a>: 		cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2731" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2731">#L2731</a>: 		rl.cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2732" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2732">#L2732</a>: 		defer rl.cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2744" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2744">#L2744</a>: 	rl.cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2745" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2745">#L2745</a>: 	defer rl.cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2796" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2796">#L2796</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2797" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2797">#L2797</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2869" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2869">#L2869</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2870" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2870">#L2870</a>: 	defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2912" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2912">#L2912</a>: 		cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2916" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2916">#L2916</a>: 			cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2919" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2919">#L2919</a>: 		cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2950" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2950">#L2950</a>: 		cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2951" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2951">#L2951</a>: 		defer cc.<b>mu</b>.Unlock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-3128" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-3128">#L3128</a>: 	cc.<b>mu</b>.Lock()
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-3133" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-3133">#L3133</a>: 	cc.<b>mu</b>.Unlock()
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

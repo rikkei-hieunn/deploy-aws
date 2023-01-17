@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/sys/unix._zero</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../../../../pkg/golang.org/x/sys/unix.html">golang.org/x/sys/unix</a>.<a href="../../../../src/golang.org/x/sys/unix/syscall.go.html#line-87">_zero</a></b></span>
+
+<span class="title">47 uses</span>
+
+	golang.org/x/sys/unix (current package)
+		<a href="../../../../src/golang.org/x/sys/unix/syscall.go.html#line-87">syscall.go#L87</a>: var <b>_zero</b> uintptr
+		<a href="../../../../src/golang.org/x/sys/unix/syscall_linux.go.html#line-1983">syscall_linux.go#L1983</a>: 			iovecs[i].Base = (*byte)(unsafe.Pointer(&amp;<b>_zero</b>))
+		<a href="../../../../src/golang.org/x/sys/unix/syscall_unix.go.html#line-363">syscall_unix.go#L363</a>: 			iov[i].Base = (*byte)(unsafe.Pointer(&amp;<b>_zero</b>))
+		<a href="../../../../src/golang.org/x/sys/unix/syscall_unix.go.html#line-407" class="path-duplicate">syscall_unix.go</a><a href="../../../../src/golang.org/x/sys/unix/syscall_unix.go.html#line-407">#L407</a>: 			iov[i].Base = (*byte)(unsafe.Pointer(&amp;<b>_zero</b>))
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-144">zsyscall_linux.go#L144</a>: 		_p1 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-211" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-211">#L211</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-260" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-260">#L260</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-314" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-314">#L314</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-330" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-330">#L330</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-467" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-467">#L467</a>: 		_p2 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-731" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-731">#L731</a>: 		_p1 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-763" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-763">#L763</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-810" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-810">#L810</a>: 		_p1 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-879" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-879">#L879</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-934" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-934">#L934</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-990" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-990">#L990</a>: 		_p2 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1007" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1007">#L1007</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1076" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1076">#L1076</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1103" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1103">#L1103</a>: 		_p2 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1125" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1125">#L1125</a>: 		_p1 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1147" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1147">#L1147</a>: 		_p1 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1194" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1194">#L1194</a>: 		_p2 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1364" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1364">#L1364</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1447" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1447">#L1447</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1463" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1463">#L1463</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1540" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1540">#L1540</a>: 		_p2 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1704" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1704">#L1704</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1753" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1753">#L1753</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1770" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1770">#L1770</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1787" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1787">#L1787</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1804" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1804">#L1804</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1821" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1821">#L1821</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1838" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1838">#L1838</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1865" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1865">#L1865</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1881" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1881">#L1881</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1897" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1897">#L1897</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1923" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1923">#L1923</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1939" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-1939">#L1939</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2021" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2021">#L2021</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2027" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2027">#L2027</a>: 		_p1 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2044" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2044">#L2044</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2050" class="path-duplicate">zsyscall_linux.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux.go.html#line-2050">#L2050</a>: 		_p1 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-54">zsyscall_linux_amd64.go#L54</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-244" class="path-duplicate">zsyscall_linux_amd64.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-244">#L244</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-261" class="path-duplicate">zsyscall_linux_amd64.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-261">#L261</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-536" class="path-duplicate">zsyscall_linux_amd64.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-536">#L536</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+		<a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-553" class="path-duplicate">zsyscall_linux_amd64.go</a><a href="../../../../src/golang.org/x/sys/unix/zsyscall_linux_amd64.go.html#line-553">#L553</a>: 		_p0 = unsafe.Pointer(&amp;<b>_zero</b>)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

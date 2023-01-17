@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.Stream.cancel</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-243">Stream</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-248">cancel</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-357">handler_server.go#L357</a>: 		<b>cancel</b>:         cancel,
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-487">http2_server.go#L487</a>: 		s.ctx, s.<b>cancel</b> = context.WithTimeout(t.ctx, timeout)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-489" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-489">#L489</a>: 		s.ctx, s.<b>cancel</b> = context.WithCancel(t.ctx)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-505" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-505">#L505</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-516" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-516">#L516</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-532" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-532">#L532</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1220" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1220">#L1220</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1254" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1254">#L1254</a>: 	s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1278" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1278">#L1278</a>: 	s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-248">transport.go#L248</a>: 	<b>cancel</b>       context.CancelFunc // always nil for client side Stream
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

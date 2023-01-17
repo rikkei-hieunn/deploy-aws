@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.ClientConn.streams</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-295">ClientConn</a>.<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-322">streams</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">20 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-322">transport.go#L322</a>: 	<b>streams</b>         map[uint32]*clientStream // client-initiated
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-748" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-748">#L748</a>: 		<b>streams</b>:               make(map[uint32]*clientStream),
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-863" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-863">#L863</a>: 	for streamID, cs := range cc.<b>streams</b> {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-941" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-941">#L941</a>: 		StreamsActive:        len(cc.<b>streams</b>),
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-973" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-973">#L973</a>: 		maxConcurrentOkay = int64(len(cc.<b>streams</b>)+cc.streamsReserved+1) &lt;= int64(cc.maxConcurrentStreams)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1028" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1028">#L1028</a>: 	if len(cc.<b>streams</b>) &gt; 0 || cc.streamsReserved &gt; 0 {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1046" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1046">#L1046</a>: 	return cc.doNotReuse &amp;&amp; len(cc.<b>streams</b>) == 0
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1063" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1063">#L1063</a>: 			if len(cc.<b>streams</b>) == 0 || cc.closed {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1118" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1118">#L1118</a>: 	for _, cs := range cc.<b>streams</b> {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1585" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1585">#L1585</a>: 		if int64(len(cc.<b>streams</b>)) &lt; int64(cc.maxConcurrentStreams) {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2080" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2080">#L2080</a>: 	cc.<b>streams</b>[cs.ID] = cs
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2088" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2088">#L2088</a>: 	slen := len(cc.<b>streams</b>)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2089" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2089">#L2089</a>: 	delete(cc.<b>streams</b>, id)
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2090" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2090">#L2090</a>: 	if len(cc.<b>streams</b>) != slen-1 {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2094" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2094">#L2094</a>: 	if len(cc.<b>streams</b>) == 0 &amp;&amp; cc.idleTimer != nil {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2103" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2103">#L2103</a>: 	if closeOnIdle &amp;&amp; cc.streamsReserved == 0 &amp;&amp; len(cc.<b>streams</b>) == 0 {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2179" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2179">#L2179</a>: 	for _, cs := range cc.<b>streams</b> {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2746" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2746">#L2746</a>: 	cs := rl.cc.<b>streams</b>[id]
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2830" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2830">#L2830</a>: 			for _, cs := range cc.<b>streams</b> {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-3129" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-3129">#L3129</a>: 	ci.WasIdle = len(cc.<b>streams</b>) == 0 &amp;&amp; reused
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

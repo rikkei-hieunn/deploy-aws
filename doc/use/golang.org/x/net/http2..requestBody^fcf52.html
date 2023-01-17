@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.requestBody</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2436">requestBody</a></b></span>
+
+<span class="title">6 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1993">server.go#L1993</a>: 	st.body = req.Body.(*<b>requestBody</b>).pipe // may be nil
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2180" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2180">#L2180</a>: 		req.Body.(*<b>requestBody</b>).pipe = &amp;pipe{
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2243" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2243">#L2243</a>: 	body := &amp;<b>requestBody</b>{
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2436" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2436">#L2436</a>: type <b>requestBody</b> struct {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2446" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2446">#L2446</a>: func (b *<b>requestBody</b>) Close() error {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2455" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2455">#L2455</a>: func (b *<b>requestBody</b>) Read(p []byte) (n int, err error) {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

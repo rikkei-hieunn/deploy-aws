@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.loopyWriter.writeHeader</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-462">loopyWriter</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-678">writeHeader</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">7 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-637">controlbuf.go#L637</a>: 			return l.<b>writeHeader</b>(h.streamID, h.endStream, h.hf, h.onWrite)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-646" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-646">#L646</a>: 		if err := l.<b>writeHeader</b>(h.streamID, h.endStream, h.hf, h.onWrite); err != nil {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-671" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-671">#L671</a>: 	if err := l.<b>writeHeader</b>(str.id, hdr.endStream, hdr.hf, hdr.onWrite); err != nil {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-678" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-678">#L678</a>: func (l *loopyWriter) <b>writeHeader</b>(streamID uint32, endStream bool, hf []hpack.HeaderField, onWrite func()) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-787" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-787">#L787</a>: 	if err := l.<b>writeHeader</b>(eas.streamID, true, headerFields, nil); err != nil {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-902" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-902">#L902</a>: 			if err := l.<b>writeHeader</b>(trailer.streamID, trailer.endStream, trailer.hf, trailer.onWrite); err != nil {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-971" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-971">#L971</a>: 		if err := l.<b>writeHeader</b>(trailer.streamID, trailer.endStream, trailer.hf, trailer.onWrite); err != nil {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.http2Client.czData</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-61">http2Client</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-137">czData</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">20 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-137">http2_client.go#L137</a>: 	<b>czData</b>     *channelzData
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-337" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-337">#L337</a>: 		<b>czData</b>:                new(channelzData),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-740" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-740">#L740</a>: 				atomic.AddInt64(&amp;t.<b>czData</b>.streamsStarted, 1)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-741" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-741">#L741</a>: 				atomic.StoreInt64(&amp;t.<b>czData</b>.lastStreamCreatedTime, time.Now().UnixNano())
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-900" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-900">#L900</a>: 					atomic.AddInt64(&amp;t.<b>czData</b>.streamsSucceeded, 1)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-902" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-902">#L902</a>: 					atomic.AddInt64(&amp;t.<b>czData</b>.streamsFailed, 1)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1679" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1679">#L1679</a>: 					atomic.AddInt64(&amp;t.<b>czData</b>.kpCount, 1)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1711" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1711">#L1711</a>: 		StreamsStarted:                  atomic.LoadInt64(&amp;t.<b>czData</b>.streamsStarted),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1712" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1712">#L1712</a>: 		StreamsSucceeded:                atomic.LoadInt64(&amp;t.<b>czData</b>.streamsSucceeded),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1713" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1713">#L1713</a>: 		StreamsFailed:                   atomic.LoadInt64(&amp;t.<b>czData</b>.streamsFailed),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1714" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1714">#L1714</a>: 		MessagesSent:                    atomic.LoadInt64(&amp;t.<b>czData</b>.msgSent),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1715" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1715">#L1715</a>: 		MessagesReceived:                atomic.LoadInt64(&amp;t.<b>czData</b>.msgRecv),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1716" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1716">#L1716</a>: 		KeepAlivesSent:                  atomic.LoadInt64(&amp;t.<b>czData</b>.kpCount),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1717" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1717">#L1717</a>: 		LastLocalStreamCreatedTimestamp: time.Unix(0, atomic.LoadInt64(&amp;t.<b>czData</b>.lastStreamCreatedTime)),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1718" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1718">#L1718</a>: 		LastMessageSentTimestamp:        time.Unix(0, atomic.LoadInt64(&amp;t.<b>czData</b>.lastMsgSentTime)),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1719" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1719">#L1719</a>: 		LastMessageReceivedTimestamp:    time.Unix(0, atomic.LoadInt64(&amp;t.<b>czData</b>.lastMsgRecvTime)),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1736" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1736">#L1736</a>: 	atomic.AddInt64(&amp;t.<b>czData</b>.msgSent, 1)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1737" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1737">#L1737</a>: 	atomic.StoreInt64(&amp;t.<b>czData</b>.lastMsgSentTime, time.Now().UnixNano())
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1741" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1741">#L1741</a>: 	atomic.AddInt64(&amp;t.<b>czData</b>.msgRecv, 1)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1742" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1742">#L1742</a>: 	atomic.StoreInt64(&amp;t.<b>czData</b>.lastMsgRecvTime, time.Now().UnixNano())
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

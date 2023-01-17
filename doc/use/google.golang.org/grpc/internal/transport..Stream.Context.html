@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.Stream.Context</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-243">Stream</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-413">Context</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">21 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-234">handler_server.go#L234</a>: 			sh.HandleRPC(s.<b>Context</b>(), &amp;stats.OutTrailer{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-320" class="path-duplicate">handler_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-320">#L320</a>: 			sh.HandleRPC(s.<b>Context</b>(), &amp;stats.OutHeader{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1001">http2_server.go#L1001</a>: 		sh.HandleRPC(s.<b>Context</b>(), outHeader)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1067" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1067">#L1067</a>: 		sh.HandleRPC(s.<b>Context</b>(), &amp;stats.OutTrailer{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-413">transport.go#L413</a>: func (s *Stream) <b>Context</b>() context.Context {
+
+	<a href="../../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../../src/google.golang.org/grpc/rpc_util.go.html#line-255">rpc_util.go#L255</a>: 	if x, ok := peer.FromContext(attempt.s.<b>Context</b>()); ok {
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1027">server.go#L1027</a>: 	tr, ok := trace.FromContext(stream.<b>Context</b>())
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1039" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1039">#L1039</a>: 	if dl, ok := stream.<b>Context</b>().Deadline(); ok {
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1124" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1124">#L1124</a>: 			sh.HandleRPC(stream.<b>Context</b>(), outPayload(false, msg, data, payload, time.Now()))
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1185" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1185">#L1185</a>: 			sh.HandleRPC(stream.<b>Context</b>(), statsBegin)
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1217" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1217">#L1217</a>: 				sh.HandleRPC(stream.<b>Context</b>(), end)
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1239" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1239">#L1239</a>: 		ctx := stream.<b>Context</b>()
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1318" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1318">#L1318</a>: 			sh.HandleRPC(stream.<b>Context</b>(), &amp;stats.InPayload{
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1339" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1339">#L1339</a>: 	ctx := NewContextWithServerTransportStream(stream.<b>Context</b>(), stream)
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1505" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1505">#L1505</a>: 			sh.HandleRPC(stream.<b>Context</b>(), statsBegin)
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1508" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1508">#L1508</a>: 	ctx := NewContextWithServerTransportStream(stream.<b>Context</b>(), stream)
+		<a href="../../../../src/google.golang.org/grpc/server.go.html#line-1544" class="path-duplicate">server.go</a><a href="../../../../src/google.golang.org/grpc/server.go.html#line-1544">#L1544</a>: 					sh.HandleRPC(stream.<b>Context</b>(), end)
+		<a href="../../../../src/google.golang.org/grpc/stream.go.html#line-702">stream.go#L702</a>: 		return cs.attempt.s.<b>Context</b>()
+		<a href="../../../../src/google.golang.org/grpc/stream.go.html#line-1303" class="path-duplicate">stream.go</a><a href="../../../../src/google.golang.org/grpc/stream.go.html#line-1303">#L1303</a>: 	return as.s.<b>Context</b>()
+		<a href="../../../../src/google.golang.org/grpc/stream.go.html#line-1617" class="path-duplicate">stream.go</a><a href="../../../../src/google.golang.org/grpc/stream.go.html#line-1617">#L1617</a>: 			sh.HandleRPC(ss.s.<b>Context</b>(), outPayload(false, m, data, payload, time.Now()))
+		<a href="../../../../src/google.golang.org/grpc/stream.go.html#line-1672" class="path-duplicate">stream.go</a><a href="../../../../src/google.golang.org/grpc/stream.go.html#line-1672">#L1672</a>: 			sh.HandleRPC(ss.s.<b>Context</b>(), &amp;stats.InPayload{
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

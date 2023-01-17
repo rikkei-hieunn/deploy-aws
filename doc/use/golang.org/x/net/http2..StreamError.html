@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.StreamError</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-71">StreamError</a></b></span>
+
+<span class="title">30 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-71">errors.go#L71</a>: type <b>StreamError</b> struct {
+		<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-82" class="path-duplicate">errors.go</a><a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-82">#L82</a>: func streamError(id uint32, code ErrCode) <b>StreamError</b> {
+		<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-83" class="path-duplicate">errors.go</a><a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-83">#L83</a>: 	return <b>StreamError</b>{StreamID: id, Code: code}
+		<a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-86" class="path-duplicate">errors.go</a><a href="../../../../src/golang.org/x/net/http2/errors.go.html#line-86">#L86</a>: func (e <b>StreamError</b>) Error() string {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-480">frame.go#L480</a>: 	if _, ok := err.(<b>StreamError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1596" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1596">#L1596</a>: 		return nil, <b>StreamError</b>{mh.StreamID, ErrCodeProtocol, invalid}
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1603" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1603">#L1603</a>: 		return nil, <b>StreamError</b>{mh.StreamID, ErrCodeProtocol, err}
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-935">server.go#L935</a>: 			if se, ok := wr.write.(<b>StreamError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1178" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1178">#L1178</a>: 		_, isReset := wr.write.(<b>StreamError</b>)
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1228" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1228">#L1228</a>: 			case <b>StreamError</b>, handlerPanicRST, writeWindowUpdate:
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1305" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1305">#L1305</a>: 		case <b>StreamError</b>:
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1425" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1425">#L1425</a>: func (sc *serverConn) resetStream(se <b>StreamError</b>) {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1468" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1468">#L1468</a>: 	case <b>StreamError</b>:
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1645" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1645">#L1645</a>: 	if e, ok := err.(<b>StreamError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1901" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1901">#L1901</a>: 	st.sc.writeFrameFromHandler(FrameWriteRequest{write: <b>StreamError</b>{
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-3239" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-3239">#L3239</a>: 	case <b>StreamError</b>:
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-650">transport.go#L650</a>: 	if se, ok := err.(<b>StreamError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1547" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-1547">#L1547</a>: 			if se, ok := err.(<b>StreamError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2236" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2236">#L2236</a>: 		if se, ok := err.(<b>StreamError</b>); ok {
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2297" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2297">#L2297</a>: 		rl.endStreamError(cs, <b>StreamError</b>{
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2326" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2326">#L2326</a>: 		rl.endStreamError(cs, <b>StreamError</b>{
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2643" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2643">#L2643</a>: 		rl.endStreamError(cs, <b>StreamError</b>{
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2651" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2651">#L2651</a>: 		rl.endStreamError(cs, <b>StreamError</b>{
+		<a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2660" class="path-duplicate">transport.go</a><a href="../../../../src/golang.org/x/net/http2/transport.go.html#line-2660">#L2660</a>: 			rl.endStreamError(cs, <b>StreamError</b>{
+		<a href="../../../../src/golang.org/x/net/http2/write.go.html#line-128">write.go#L128</a>: func (se <b>StreamError</b>) writeFrame(ctx writeContext) error {
+		<a href="../../../../src/golang.org/x/net/http2/write.go.html#line-132" class="path-duplicate">write.go</a><a href="../../../../src/golang.org/x/net/http2/write.go.html#line-132">#L132</a>: func (se <b>StreamError</b>) staysWithinBuffer(max int) bool { return frameHeaderLen+4 &lt;= max }
+		<a href="../../../../src/golang.org/x/net/http2/writesched.go.html#line-69">writesched.go#L69</a>: 		if se, ok := wr.write.(<b>StreamError</b>); ok {
+
+	<a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-453">handler_server.go#L453</a>: 	if se, ok := err.(http2.<b>StreamError</b>); ok {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1569">http2_client.go#L1569</a>: 			if se, ok := err.(http2.<b>StreamError</b>); ok {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-613">http2_server.go#L613</a>: 			if se, ok := err.(http2.<b>StreamError</b>); ok {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

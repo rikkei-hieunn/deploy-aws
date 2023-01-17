@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.requestParam.authority</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2187">requestParam</a>.<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2189">authority</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2134">server.go#L2134</a>: 		<b>authority</b>: f.PseudoValue("authority"),
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2140" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2140">#L2140</a>: 		if rp.path != "" || rp.scheme != "" || rp.<b>authority</b> == "" {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2161" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2161">#L2161</a>: 	if rp.<b>authority</b> == "" {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2162" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2162">#L2162</a>: 		rp.<b>authority</b> = rp.header.Get("Host")
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2189" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2189">#L2189</a>: 	scheme, <b>authority</b>, path string
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2232" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2232">#L2232</a>: 		url_ = &amp;url.URL{Host: rp.<b>authority</b>}
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2233" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2233">#L2233</a>: 		requestURI = rp.<b>authority</b> // mimic HTTP/1 server behavior
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2258" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2258">#L2258</a>: 		Host:       rp.<b>authority</b>,
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-3136" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-3136">#L3136</a>: 			<b>authority</b>: msg.url.Host,
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

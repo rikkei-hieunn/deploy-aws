@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.frameCache</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-418">frameCache</a></b></span>
+
+<span class="title">16 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-125">frame.go#L125</a>: type frameParser func(fc *<b>frameCache</b>, fh FrameHeader, countError func(string), payload []byte) (Frame, error)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-332" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-332">#L332</a>: 	frameCache *<b>frameCache</b> // nil if frames aren't reused (default)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-415" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-415">#L415</a>: 	fr.frameCache = &amp;<b>frameCache</b>{}
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-418" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-418">#L418</a>: type <b>frameCache</b> struct {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-422" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-422">#L422</a>: func (fc *<b>frameCache</b>) getDataFrame() *DataFrame {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-597" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-597">#L597</a>: func parseDataFrame(fc *<b>frameCache</b>, fh FrameHeader, countError func(string), payload []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-707" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-707">#L707</a>: func parseSettingsFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-848" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-848">#L848</a>: func parsePingFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), payload []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-890" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-890">#L890</a>: func parseGoAwayFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-932" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-932">#L932</a>: func parseUnknownFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-943" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-943">#L943</a>: func parseWindowUpdateFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1011" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1011">#L1011</a>: func parseHeadersFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (_ Frame, err error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1153" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1153">#L1153</a>: func parsePriorityFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), payload []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1202" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1202">#L1202</a>: func parseRSTStreamFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1234" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1234">#L1234</a>: func parseContinuationFrame(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (Frame, error) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1285" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1285">#L1285</a>: func parsePushPromise(_ *<b>frameCache</b>, fh FrameHeader, countError func(string), p []byte) (_ Frame, err error) {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

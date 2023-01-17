@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/tools/internal/gcimporter.importReader.p</title>
+<link href="../../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/golang.org/x/tools/internal/gcimporter.html">golang.org/x/tools/internal/gcimporter</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-401">importReader</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-402">p</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">29 uses</span>
+
+	golang.org/x/tools/internal/gcimporter (current package)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-334">iimport.go#L334</a>: 	r := &amp;importReader{<b>p</b>: p, currPkg: pkg}
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-373" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-373">#L373</a>: 	r := &amp;importReader{<b>p</b>: p}
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-402" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-402">#L402</a>: 	<b>p</b>          *iimporter
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-446" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-446">#L446</a>: 		underlying := r.<b>p</b>.typAt(r.uint64(), named).Underlying()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-478" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-478">#L478</a>: 		if r.<b>p</b>.version &lt; iexportVersionGenerics {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-488" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-488">#L488</a>: 		r.<b>p</b>.tparamIndex[id] = t
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-490" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-490">#L490</a>: 		if r.<b>p</b>.version &gt;= iexportVersionGo1_18 {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-505" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-505">#L505</a>: 		r.<b>p</b>.later = append(r.<b>p</b>.later, setConstraintArgs{t: t, constraint: constraint})
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-523" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-523">#L523</a>: 	if r.<b>p</b>.version &gt;= iexportVersionGo1_18 {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-648" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-648">#L648</a>: 	if r.<b>p</b>.version &gt;= iexportVersionPosCol {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-657" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-657">#L657</a>: 	return r.<b>p</b>.fake.pos(r.prevFile, int(r.prevLine), int(r.prevColumn))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-685" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-685">#L685</a>: 	return r.<b>p</b>.typAt(r.uint64(), nil)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-693" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-693">#L693</a>: func (r *importReader) pkg() *types.Package { return r.<b>p</b>.pkgAt(r.uint64()) }
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-694" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-694">#L694</a>: func (r *importReader) string() string      { return r.<b>p</b>.stringAt(r.uint64()) }
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-699" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-699">#L699</a>: 		r.<b>p</b>.trace("importing type %d (base: %s)", k, base)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-700" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-700">#L700</a>: 		r.<b>p</b>.indent++
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-702" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-702">#L702</a>: 			r.<b>p</b>.indent--
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-703" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-703">#L703</a>: 			r.<b>p</b>.trace("=&gt; %s", res)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-708" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-708">#L708</a>: 		errorf("unexpected kind tag in %q: %v", r.<b>p</b>.ipath, k)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-713" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-713">#L713</a>: 		r.<b>p</b>.doDecl(pkg, name)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-774" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-774">#L774</a>: 		r.<b>p</b>.interfaceList = append(r.<b>p</b>.interfaceList, typ)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-778" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-778">#L778</a>: 		if r.<b>p</b>.version &lt; iexportVersionGenerics {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-783" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-783">#L783</a>: 		if t, ok := r.<b>p</b>.tparamIndex[id]; ok {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-788" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-788">#L788</a>: 		r.<b>p</b>.doDecl(pkg, name)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-789" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-789">#L789</a>: 		return r.<b>p</b>.tparamIndex[id]
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-792" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-792">#L792</a>: 		if r.<b>p</b>.version &lt; iexportVersionGenerics {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-811" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-811">#L811</a>: 		if r.<b>p</b>.version &lt; iexportVersionGenerics {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

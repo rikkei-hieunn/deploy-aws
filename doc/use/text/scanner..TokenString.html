@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: text/scanner.TokenString</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/text/scanner.html">text/scanner</a>.<a href="../../src/text/scanner/scanner.go.html#line-103">TokenString</a></b></span>
+
+<span class="title">7 uses</span>
+
+	text/scanner (current package)
+		<a href="../../src/text/scanner/scanner.go.html#line-103">scanner.go#L103</a>: func <b>TokenString</b>(tok rune) string {
+
+	<a href="../../pkg/golang.org/x/tools/internal/gcimporter.html">golang.org/x/tools/internal/gcimporter</a>
+		<a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-349">gcimporter.go#L349</a>: 		fmt.Printf("%s: %q -&gt; %q\n", scanner.<b>TokenString</b>(p.tok), p.scanner.TokenText(), p.lit)
+		<a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-394" class="path-duplicate">gcimporter.go</a><a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-394">#L394</a>: 		p.errorf("expected %s, got %s (%s)", scanner.<b>TokenString</b>(tok), scanner.<b>TokenString</b>(p.tok), lit)
+		<a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-869" class="path-duplicate">gcimporter.go</a><a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-869">#L869</a>: 	p.errorf("expected type, got %s (%q)", scanner.<b>TokenString</b>(p.tok), p.lit)
+		<a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1004" class="path-duplicate">gcimporter.go</a><a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1004">#L1004</a>: 		p.errorf("expected literal got %s", scanner.<b>TokenString</b>(p.tok))
+		<a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1151" class="path-duplicate">gcimporter.go</a><a href="../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1151">#L1151</a>: 		p.errorf("expected '$$', got %s %c", scanner.<b>TokenString</b>(p.tok), ch)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

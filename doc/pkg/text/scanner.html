@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: text/scanner</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>scanner</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../index.html#pkg-text/scanner">text/scanner</a><i> (on <a href="https://pkg.go.dev/text/scanner" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../dep/text/scanner.html">6 packages</a>, and imported by <a href="../../dep/text/scanner.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<input type='checkbox' checked class="fold" id="file-0-fold-content"><label for="file-0-fold-content">   <a href="../../src/text/scanner/scanner.go.html#doc">#d</a> <a href="../../src/text/scanner/scanner.go.html">scanner.go</a></label><span id='file-0-fold-content-items' class="fold-items">
+		Package scanner provides a scanner and tokenizer for UTF-8-encoded text.
+		It takes an io.Reader providing the source, which then can be tokenized
+		through repeated calls to the Scan function. For compatibility with
+		existing tools, the NUL character is not allowed. If the first character
+		in the source is a UTF-8 encoded byte order mark (BOM), it is discarded.
+
+		By default, a Scanner skips white space and Go comments and recognizes all
+		literals as defined by the Go language specification. It may be
+		customized to recognize only a subset of those literals and to recognize
+		different identifier and white space characters.</span></div>
+<div id="examples"><span class="title">Code Examples</span>
+
+	<input type='checkbox' class="fold" id="example-0-fold-content"><label for="example-0-fold-content"></label><span id='example-0-fold-content-items' class="fold-items">
+		package main
+		
+		import (
+			"fmt"
+			"strings"
+			"text/scanner"
+		)
+		
+		func main() {
+			const src = `
+		// This is scanned code.
+		if a &gt; 10 {
+			someParsable = text
+		}`
+		
+			var s scanner.Scanner
+			s.Init(strings.NewReader(src))
+			s.Filename = "example"
+			for tok := s.Scan(); tok != scanner.EOF; tok = s.Scan() {
+				fmt.Printf("%s: %s\n", s.Position, s.TokenText())
+			}
+		
+		}
+</span>
+	<input type='checkbox' class="fold" id="example-1-fold-content"><label for="example-1-fold-content">_isIdentRune</label><span id='example-1-fold-content-items' class="fold-items">
+		package main
+		
+		import (
+			"fmt"
+			"strings"
+			"text/scanner"
+			"unicode"
+		)
+		
+		func main() {
+			const src = "%var1 var2%"
+		
+			var s scanner.Scanner
+			s.Init(strings.NewReader(src))
+			s.Filename = "default"
+		
+			for tok := s.Scan(); tok != scanner.EOF; tok = s.Scan() {
+				fmt.Printf("%s: %s\n", s.Position, s.TokenText())
+			}
+		
+			fmt.Println()
+			s.Init(strings.NewReader(src))
+			s.Filename = "percent"
+		
+			// treat leading '%' as part of an identifier
+			s.IsIdentRune = func(ch rune, i int) bool {
+				return ch == '%' &amp;&amp; i == 0 || unicode.IsLetter(ch) || unicode.IsDigit(ch) &amp;&amp; i &gt; 0
+			}
+		
+			for tok := s.Scan(); tok != scanner.EOF; tok = s.Scan() {
+				fmt.Printf("%s: %s\n", s.Position, s.TokenText())
+			}
+		
+		}
+</span>
+	<input type='checkbox' class="fold" id="example-2-fold-content"><label for="example-2-fold-content">_mode</label><span id='example-2-fold-content-items' class="fold-items">
+		package main
+		
+		import (
+			"fmt"
+			"strings"
+			"text/scanner"
+		)
+		
+		func main() {
+			const src = `
+		    // Comment begins at column 5.
+		
+		This line should not be included in the output.
+		
+		/*
+		This multiline comment
+		should be extracted in
+		its entirety.
+		*/
+		`
+		
+			var s scanner.Scanner
+			s.Init(strings.NewReader(src))
+			s.Filename = "comments"
+			s.Mode ^= scanner.SkipComments // don't skip comments
+		
+			for tok := s.Scan(); tok != scanner.EOF; tok = s.Scan() {
+				txt := s.TokenText()
+				if strings.HasPrefix(txt, "//") || strings.HasPrefix(txt, "/*") {
+					fmt.Printf("%s: %s\n", s.Position, txt)
+				}
+			}
+		
+		}
+</span>
+	<input type='checkbox' class="fold" id="example-3-fold-content"><label for="example-3-fold-content">_whitespace</label><span id='example-3-fold-content-items' class="fold-items">
+		package main
+		
+		import (
+			"fmt"
+			"strings"
+			"text/scanner"
+		)
+		
+		func main() {
+			// tab-separated values
+			const src = `aa	ab	ac	ad
+		ba	bb	bc	bd
+		ca	cb	cc	cd
+		da	db	dc	dd`
+		
+			var (
+				col, row int
+				s        scanner.Scanner
+				tsv      [4][4]string // large enough for example above
+			)
+			s.Init(strings.NewReader(src))
+			s.Whitespace ^= 1&lt;&lt;'\t' | 1&lt;&lt;'\n' // don't skip tabs and new lines
+		
+			for tok := s.Scan(); tok != scanner.EOF; tok = s.Scan() {
+				switch tok {
+				case '\n':
+					row++
+					col = 0
+				case '\t':
+					col++
+				default:
+					tsv[row][col] = s.TokenText()
+				}
+			}
+		
+			fmt.Print(tsv)
+		
+		}
+</span>
+</div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 2, both are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-Position" data-popularity="475">	<input type='checkbox' class="fold" id="Position-fold-content"><label for="Position-fold-content"> <a href="../../use/text/scanner..Position.html">type</a> <a href="../../src/text/scanner/scanner.go.html#line-28">Position</a> <i>(struct)</i></label><span id='Position-fold-content-docs' class="fold-docs">
+		Position is a value that represents a source position.
+		A position is valid if Line &gt; 0.
+
+		<input type='checkbox' class="fold" id="Position-fold-fields"><label for="Position-fold-fields">Fields (<i>total 4, all are exported</i>)</label><span id='Position-fold-fields-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Position-fold-field-Column"><label for="Position-fold-field-Column"><a href="../../src/text/scanner/scanner.go.html#line-32">Column</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Position-fold-field-Column-docs' class="fold-docs">
+				// column number, starting at 1 (character count per line)
+</span></span><span>
+			<input type='checkbox' class="fold" id="Position-fold-field-Filename"><label for="Position-fold-field-Filename"><a href="../../src/text/scanner/scanner.go.html#line-29">Filename</a> <i><a href="../builtin.html#name-string">string</a></i></label><span id='Position-fold-field-Filename-docs' class="fold-docs">
+				// filename, if any
+</span></span><span>
+			<input type='checkbox' class="fold" id="Position-fold-field-Line"><label for="Position-fold-field-Line"><a href="../../src/text/scanner/scanner.go.html#line-31">Line</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Position-fold-field-Line-docs' class="fold-docs">
+				// line number, starting at 1
+</span></span><span>
+			<input type='checkbox' class="fold" id="Position-fold-field-Offset"><label for="Position-fold-field-Offset"><a href="../../src/text/scanner/scanner.go.html#line-30">Offset</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Position-fold-field-Offset-docs' class="fold-docs">
+				// byte offset, starting at 0
+</span></span></span>
+		<input type='checkbox' class="fold" id="Position-fold-methods"><label for="Position-fold-methods">Methods (<i>total 2, both are exported</i>)</label><span id='Position-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Position-fold-method-IsValid"><label for="Position-fold-method-IsValid">(*Position) <a href="../../src/text/scanner/scanner.go.html#line-36">IsValid</a>() <a href="../builtin.html#name-bool">bool</a></label><span id='Position-fold-method-IsValid-docs' class="fold-docs">
+				IsValid reports whether the position is valid.
+</span></span><span>
+			<span class="nodocs">( Position) <a href="../../src/text/scanner/scanner.go.html#line-38">String</a>() <a href="../builtin.html#name-string">string</a></span></span></span>
+		<input type='checkbox' class="fold" id="Position-fold-impls"><label for="Position-fold-impls">Implements (<i>at least 6, in which 3 are exported</i>)</label><span id='Position-fold-impls-items' class="fold-items"><span>
+			*Position : database/sql/driver.<a href="../database/sql/driver.html#name-Validator">Validator</a></span><span>
+			 Position : expvar.<a href="../expvar.html#name-Var">Var</a></span><span>
+			 Position : fmt.<a href="../fmt.html#name-Stringer">Stringer</a></span>
+			<input type='checkbox' class="showhide" id="Position-showhide-impls"><i><label for="Position-showhide-impls" class="show-inline">/* 3+ unexporteds ... */</label><label for="Position-showhide-impls" class="hide-inline">/* 3+ unexporteds: */</label></i><span class="hidden"><i>
+			 Position : context.<a href="../context.html#name-stringer">stringer</a></i></span><span class="hidden"><i>
+			 Position : github.com/aws/smithy-go/middleware.<a href="../github.com/aws/smithy-go/middleware.html#name-stringer">stringer</a></i></span><span class="hidden"><i>
+			 Position : runtime.<a href="../runtime.html#name-stringer">stringer</a></i></span></span>
+		<input type='checkbox' class="fold" id="Position-fold-results"><label for="Position-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='Position-fold-results-items' class="fold-items"><span>
+			func (*<a href="#name-Scanner">Scanner</a>).<a href="../../src/text/scanner/scanner.go.html#line-749">Pos</a>() (pos <b>Position</b>)</span></span>
+
+</span></div><div class="anchor type-res" id="name-Scanner" data-popularity="1425">	<input type='checkbox' class="fold" id="Scanner-fold-content"><label for="Scanner-fold-content"> <a href="../../use/text/scanner..Scanner.html">type</a> <a href="../../src/text/scanner/scanner.go.html#line-117">Scanner</a> <i>(struct)</i></label><span id='Scanner-fold-content-docs' class="fold-docs">
+		A Scanner implements reading of Unicode characters and tokens from an io.Reader.
+
+		<input type='checkbox' class="fold" id="Scanner-fold-fields"><label for="Scanner-fold-fields">Fields (<i>total 23, in which 10 are exported</i>)</label><span id='Scanner-fold-fields-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Error"><label for="Scanner-fold-field-Error"><a href="../../src/text/scanner/scanner.go.html#line-146">Error</a> <i>func(s *<b>Scanner</b>, msg <a href="../builtin.html#name-string">string</a>)</i></label><span id='Scanner-fold-field-Error-docs' class="fold-docs">
+				Error is called for each error encountered. If no Error
+				function is set, the error is reported to os.Stderr.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-ErrorCount"><label for="Scanner-fold-field-ErrorCount"><a href="../../src/text/scanner/scanner.go.html#line-149">ErrorCount</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-ErrorCount-docs' class="fold-docs">
+				ErrorCount is incremented by one for each error encountered.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-IsIdentRune"><label for="Scanner-fold-field-IsIdentRune"><a href="../../src/text/scanner/scanner.go.html#line-167">IsIdentRune</a> <i>func(ch <a href="../builtin.html#name-rune">rune</a>, i <a href="../builtin.html#name-int">int</a>) <a href="../builtin.html#name-bool">bool</a></i></label><span id='Scanner-fold-field-IsIdentRune-docs' class="fold-docs">
+				IsIdentRune is a predicate controlling the characters accepted
+				as the ith rune in an identifier. The set of valid characters
+				must not intersect with the set of white space characters.
+				If no IsIdentRune function is set, regular Go identifiers are
+				accepted instead. The field may be changed at any time.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Mode"><label for="Scanner-fold-field-Mode"><a href="../../src/text/scanner/scanner.go.html#line-154">Mode</a> <i><a href="../builtin.html#name-uint">uint</a></i></label><span id='Scanner-fold-field-Mode-docs' class="fold-docs">
+				The Mode field controls which tokens are recognized. For instance,
+				to recognize Ints, set the ScanInts bit in Mode. The field may be
+				changed at any time.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Position"><label for="Scanner-fold-field-Position"><a href="../../src/text/scanner/scanner.go.html#line-176">Position</a> <i><a href="#name-Position">Position</a></i></label><span id='Scanner-fold-field-Position-docs' class="fold-docs">
+				Start position of most recently scanned token; set by Scan.
+				Calling Init or Next invalidates the position (Line == 0).
+				The Filename field is always left untouched by the Scanner.
+				If an error is reported (via Error) and Position is invalid,
+				the scanner is not inside a token. Call Pos to obtain an error
+				position in that case, or to obtain the position immediately
+				after the most recently scanned token.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Column"><label for="Scanner-fold-field-Column"><a href="../../src/text/scanner/scanner.go.html#line-176" class="path-duplicate">Position</a>.<a href="../../src/text/scanner/scanner.go.html#line-32">Column</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-Column-docs' class="fold-docs">
+				// column number, starting at 1 (character count per line)
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Filename"><label for="Scanner-fold-field-Filename"><a href="../../src/text/scanner/scanner.go.html#line-176" class="path-duplicate">Position</a>.<a href="../../src/text/scanner/scanner.go.html#line-29">Filename</a> <i><a href="../builtin.html#name-string">string</a></i></label><span id='Scanner-fold-field-Filename-docs' class="fold-docs">
+				// filename, if any
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Line"><label for="Scanner-fold-field-Line"><a href="../../src/text/scanner/scanner.go.html#line-176" class="path-duplicate">Position</a>.<a href="../../src/text/scanner/scanner.go.html#line-31">Line</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-Line-docs' class="fold-docs">
+				// line number, starting at 1
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Offset"><label for="Scanner-fold-field-Offset"><a href="../../src/text/scanner/scanner.go.html#line-176" class="path-duplicate">Position</a>.<a href="../../src/text/scanner/scanner.go.html#line-30">Offset</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-Offset-docs' class="fold-docs">
+				// byte offset, starting at 0
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-Whitespace"><label for="Scanner-fold-field-Whitespace"><a href="../../src/text/scanner/scanner.go.html#line-160">Whitespace</a> <i><a href="../builtin.html#name-uint64">uint64</a></i></label><span id='Scanner-fold-field-Whitespace-docs' class="fold-docs">
+				The Whitespace field controls which characters are recognized
+				as white space. To recognize a character ch &lt;= ' ' as white space,
+				set the ch'th bit in Whitespace (the Scanner's behavior is undefined
+				for values ch &gt; ' '). The field may be changed at any time.
+</span></span>
+			<input type='checkbox' class="showhide" id="Scanner-showhide-fields"><i><label for="Scanner-showhide-fields" class="show-inline">/* 13 unexporteds ... */</label><label for="Scanner-showhide-fields" class="hide-inline">/* 13 unexporteds: */</label></i><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-ch"><label for="Scanner-fold-field-ch"><a href="../../src/text/scanner/scanner.go.html#line-142">ch</a> <i><a href="../builtin.html#name-rune">rune</a></i></label><span id='Scanner-fold-field-ch-docs' class="fold-docs">
+				One character look-ahead
+				// character before current srcPos
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-column"><label for="Scanner-fold-field-column"><a href="../../src/text/scanner/scanner.go.html#line-129">column</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-column-docs' class="fold-docs">
+				// character count
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-lastCharLen"><label for="Scanner-fold-field-lastCharLen"><a href="../../src/text/scanner/scanner.go.html#line-131">lastCharLen</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-lastCharLen-docs' class="fold-docs">
+				// length of last character in bytes
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-lastLineLen"><label for="Scanner-fold-field-lastLineLen"><a href="../../src/text/scanner/scanner.go.html#line-130">lastLineLen</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-lastLineLen-docs' class="fold-docs">
+				// length of last line in characters (for correct column reporting)
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-line"><label for="Scanner-fold-field-line"><a href="../../src/text/scanner/scanner.go.html#line-128">line</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-line-docs' class="fold-docs">
+				// line count
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-src"><label for="Scanner-fold-field-src"><a href="../../src/text/scanner/scanner.go.html#line-119">src</a> <i><a href="../io.html">io</a>.<a href="../io.html#name-Reader">Reader</a></i></label><span id='Scanner-fold-field-src-docs' class="fold-docs">
+				Input
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-srcBuf"><label for="Scanner-fold-field-srcBuf"><a href="../../src/text/scanner/scanner.go.html#line-122">srcBuf</a> <i>[1025]<a href="../builtin.html#name-byte">byte</a></i></label><span id='Scanner-fold-field-srcBuf-docs' class="fold-docs">
+				Source buffer
+				// +1 for sentinel for common case of s.next()
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-srcBufOffset"><label for="Scanner-fold-field-srcBufOffset"><a href="../../src/text/scanner/scanner.go.html#line-127">srcBufOffset</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-srcBufOffset-docs' class="fold-docs">
+				Source position
+				// byte offset of srcBuf[0] in source
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-srcEnd"><label for="Scanner-fold-field-srcEnd"><a href="../../src/text/scanner/scanner.go.html#line-124">srcEnd</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-srcEnd-docs' class="fold-docs">
+				// source end (srcBuf index)
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-srcPos"><label for="Scanner-fold-field-srcPos"><a href="../../src/text/scanner/scanner.go.html#line-123">srcPos</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-srcPos-docs' class="fold-docs">
+				// reading position (srcBuf index)
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-tokBuf"><label for="Scanner-fold-field-tokBuf"><a href="../../src/text/scanner/scanner.go.html#line-137">tokBuf</a> <i><a href="../bytes.html">bytes</a>.<a href="../bytes.html#name-Buffer">Buffer</a></i></label><span id='Scanner-fold-field-tokBuf-docs' class="fold-docs">
+				Token text buffer
+				Typically, token text is stored completely in srcBuf, but in general
+				the token text's head may be buffered in tokBuf while the token text's
+				tail is stored in srcBuf.
+				// token text head that is not in srcBuf anymore
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-tokEnd"><label for="Scanner-fold-field-tokEnd"><a href="../../src/text/scanner/scanner.go.html#line-139">tokEnd</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-tokEnd-docs' class="fold-docs">
+				// token text tail end (srcBuf index)
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-field-tokPos"><label for="Scanner-fold-field-tokPos"><a href="../../src/text/scanner/scanner.go.html#line-138">tokPos</a> <i><a href="../builtin.html#name-int">int</a></i></label><span id='Scanner-fold-field-tokPos-docs' class="fold-docs">
+				// token text tail position (srcBuf index); valid if &gt;= 0
+</span></i></span></span>
+		<input type='checkbox' class="fold" id="Scanner-fold-methods"><label for="Scanner-fold-methods">Methods (<i>total 21, in which 8 are exported</i>)</label><span id='Scanner-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-Init"><label for="Scanner-fold-method-Init">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-182">Init</a>(src <a href="../io.html">io</a>.<a href="../io.html#name-Reader">Reader</a>) *<b>Scanner</b></label><span id='Scanner-fold-method-Init-docs' class="fold-docs">
+				Init initializes a Scanner with a new source and returns s.
+				Error is set to nil, ErrorCount is set to 0, Mode is set to GoTokens,
+				and Whitespace is set to GoWhitespace.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-IsValid"><label for="Scanner-fold-method-IsValid">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-36">IsValid</a>() <a href="../builtin.html#name-bool">bool</a></label><span id='Scanner-fold-method-IsValid-docs' class="fold-docs">
+				IsValid reports whether the position is valid.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-Next"><label for="Scanner-fold-method-Next">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-305">Next</a>() <a href="../builtin.html#name-rune">rune</a></label><span id='Scanner-fold-method-Next-docs' class="fold-docs">
+				Next reads and returns the next Unicode character.
+				It returns EOF at the end of the source. It reports
+				a read error by calling s.Error, if not nil; otherwise
+				it prints an error message to os.Stderr. Next does not
+				update the Scanner's Position field; use Pos() to
+				get the current position.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-Peek"><label for="Scanner-fold-method-Peek">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-318">Peek</a>() <a href="../builtin.html#name-rune">rune</a></label><span id='Scanner-fold-method-Peek-docs' class="fold-docs">
+				Peek returns the next Unicode character in the source without advancing
+				the scanner. It returns EOF if the scanner's position is at the last
+				character of the source.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-Pos"><label for="Scanner-fold-method-Pos">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-749">Pos</a>() (pos <a href="#name-Position">Position</a>)</label><span id='Scanner-fold-method-Pos-docs' class="fold-docs">
+				Pos returns the position of the character immediately after
+				the character or token returned by the last call to Next or Scan.
+				Use the Scanner's Position field for the start position of the most
+				recently scanned token.
+</span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-Scan"><label for="Scanner-fold-method-Scan">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-647">Scan</a>() <a href="../builtin.html#name-rune">rune</a></label><span id='Scanner-fold-method-Scan-docs' class="fold-docs">
+				Scan reads the next token or Unicode character from source and returns it.
+				It only recognizes tokens t for which the respective Mode bit (1&lt;&lt;-t) is set.
+				It returns EOF at the end of the source. It reports scanner errors (read and
+				token errors) by calling s.Error, if not nil; otherwise it prints an error
+				message to os.Stderr.
+</span></span><span>
+			<span class="nodocs">( Scanner) <a href="../../src/text/scanner/scanner.go.html#line-38">String</a>() <a href="../builtin.html#name-string">string</a></span></span><span>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-TokenText"><label for="Scanner-fold-method-TokenText">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-771">TokenText</a>() <a href="../builtin.html#name-string">string</a></label><span id='Scanner-fold-method-TokenText-docs' class="fold-docs">
+				TokenText returns the string corresponding to the most recently scanned token.
+				Valid after calling Scan and in calls of Scanner.Error.
+</span></span>
+			<input type='checkbox' class="showhide" id="Scanner-showhide-methods"><i><label for="Scanner-showhide-methods" class="show-inline">/* 13 unexporteds ... */</label><label for="Scanner-showhide-methods" class="hide-inline">/* 13 unexporteds: */</label></i><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-digits"><label for="Scanner-fold-method-digits">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-373">digits</a>(ch0 <a href="../builtin.html#name-rune">rune</a>, base <a href="../builtin.html#name-int">int</a>, invalid *<a href="../builtin.html#name-rune">rune</a>) (ch <a href="../builtin.html#name-rune">rune</a>, digsep <a href="../builtin.html#name-int">int</a>)</label><span id='Scanner-fold-method-digits-docs' class="fold-docs">
+				digits accepts the sequence { digit | '_' } starting with ch0.
+				If base &lt;= 10, digits accepts any decimal digit but records
+				the first invalid digit &gt;= base in *invalid if *invalid == 0.
+				digits returns the first rune that is not part of the sequence
+				anymore, and a bitset describing whether the sequence contained
+				digits (bit 0 is set), or separators '_' (bit 1 is set).
+</span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-329">error</a>(msg <a href="../builtin.html#name-string">string</a>)</span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-343">errorf</a>(format <a href="../builtin.html#name-string">string</a>, args ...<a href="../builtin.html#name-any">any</a>)</span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-347">isIdentRune</a>(ch <a href="../builtin.html#name-rune">rune</a>, i <a href="../builtin.html#name-int">int</a>) <a href="../builtin.html#name-bool">bool</a></span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Scanner-fold-method-next"><label for="Scanner-fold-method-next">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-219">next</a>() <a href="../builtin.html#name-rune">rune</a></label><span id='Scanner-fold-method-next-docs' class="fold-docs">
+				next reads and returns the next Unicode character. It is designed such
+				that only a minimal amount of work needs to be done in the common ASCII
+				case (one test to check for both ASCII and end-of-buffer, and one test
+				to check for newlines).
+</span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-608">scanChar</a>()</span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-614">scanComment</a>(ch <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-rune">rune</a></span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-549">scanDigits</a>(ch <a href="../builtin.html#name-rune">rune</a>, base, n <a href="../builtin.html#name-int">int</a>) <a href="../builtin.html#name-rune">rune</a></span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-560">scanEscape</a>(quote <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-rune">rune</a></span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-354">scanIdentifier</a>() <a href="../builtin.html#name-rune">rune</a></span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-400">scanNumber</a>(ch <a href="../builtin.html#name-rune">rune</a>, seenDot <a href="../builtin.html#name-bool">bool</a>) (<a href="../builtin.html#name-rune">rune</a>, <a href="../builtin.html#name-rune">rune</a>)</span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-597">scanRawString</a>()</span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*Scanner) <a href="../../src/text/scanner/scanner.go.html#line-580">scanString</a>(quote <a href="../builtin.html#name-rune">rune</a>) (n <a href="../builtin.html#name-int">int</a>)</span></i></span></span>
+		<input type='checkbox' class="fold" id="Scanner-fold-impls"><label for="Scanner-fold-impls">Implements (<i>at least 6, in which 3 are exported</i>)</label><span id='Scanner-fold-impls-items' class="fold-items"><span>
+			*Scanner : database/sql/driver.<a href="../database/sql/driver.html#name-Validator">Validator</a></span><span>
+			 Scanner : expvar.<a href="../expvar.html#name-Var">Var</a></span><span>
+			 Scanner : fmt.<a href="../fmt.html#name-Stringer">Stringer</a></span>
+			<input type='checkbox' class="showhide" id="Scanner-showhide-impls"><i><label for="Scanner-showhide-impls" class="show-inline">/* 3+ unexporteds ... */</label><label for="Scanner-showhide-impls" class="hide-inline">/* 3+ unexporteds: */</label></i><span class="hidden"><i>
+			 Scanner : context.<a href="../context.html#name-stringer">stringer</a></i></span><span class="hidden"><i>
+			 Scanner : github.com/aws/smithy-go/middleware.<a href="../github.com/aws/smithy-go/middleware.html#name-stringer">stringer</a></i></span><span class="hidden"><i>
+			 Scanner : runtime.<a href="../runtime.html#name-stringer">stringer</a></i></span></span>
+		<input type='checkbox' class="fold" id="Scanner-fold-results"><label for="Scanner-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='Scanner-fold-results-items' class="fold-items"><span>
+			func (*Scanner).<a href="../../src/text/scanner/scanner.go.html#line-182">Init</a>(src <a href="../io.html">io</a>.<a href="../io.html#name-Reader">Reader</a>) *<b>Scanner</b></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 7, in which 1 are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-TokenString">	<input type='checkbox' class="fold" id="TokenString-fold-content"><label for="TokenString-fold-content"> <a href="../../use/text/scanner..TokenString.html">func</a> <a href="../../src/text/scanner/scanner.go.html#line-103">TokenString</a>(tok <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-string">string</a></label><span id='TokenString-fold-content-docs' class="fold-docs">
+		TokenString returns a printable string for a token or Unicode character.
+
+</span></div>	<input type='checkbox' class="showhide" id="unexported-functions-showhide"><i><label for="unexported-functions-showhide" class="show-inline">/* 6 unexporteds ... */</label><label for="unexported-functions-showhide" class="hide-inline">/* 6 unexporteds: */</label></i><div class="anchor value-res hidden" id="name-digitVal"><i>	<span class="nodocs"> <a href="../../use/text/scanner..digitVal^9b807.html">func</a> <a href="../../src/text/scanner/scanner.go.html#line-539">digitVal</a>(ch <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-int">int</a></span></i></div><div class="anchor value-res hidden" id="name-invalidSep"><i>	<input type='checkbox' class="fold" id="invalidSep-fold-content"><label for="invalidSep-fold-content"> <a href="../../use/text/scanner..invalidSep^0d0c2.html">func</a> <a href="../../src/text/scanner/scanner.go.html#line-500">invalidSep</a>(x <a href="../builtin.html#name-string">string</a>) <a href="../builtin.html#name-int">int</a></label><span id='invalidSep-fold-content-docs' class="fold-docs">
+		invalidSep returns the index of the first invalid separator in x, or -1.
+
+</span></i></div><div class="anchor value-res hidden" id="name-isDecimal"><i>	<span class="nodocs"> <a href="../../use/text/scanner..isDecimal^94a68.html">func</a> <a href="../../src/text/scanner/scanner.go.html#line-364">isDecimal</a>(ch <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-bool">bool</a></span></i></div><div class="anchor value-res hidden" id="name-isHex"><i>	<span class="nodocs"> <a href="../../use/text/scanner..isHex^1a69d.html">func</a> <a href="../../src/text/scanner/scanner.go.html#line-365">isHex</a>(ch <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-bool">bool</a></span></i></div><div class="anchor value-res hidden" id="name-litname"><i>	<span class="nodocs"> <a href="../../use/text/scanner..litname^b1b12.html">func</a> <a href="../../src/text/scanner/scanner.go.html#line-486">litname</a>(prefix <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-string">string</a></span></i></div><div class="anchor value-res hidden" id="name-lower"><i>	<span class="nodocs"> <a href="../../use/text/scanner..lower^8c6fb.html">func</a> <a href="../../src/text/scanner/scanner.go.html#line-363">lower</a>(ch <a href="../builtin.html#name-rune">rune</a>) <a href="../builtin.html#name-rune">rune</a></span></i></div></div>
+<div id="exported-variables"><span class="title">Package-Level Variables<span class="title-stat"><i> (only one, which is unexported)</i></span></span>
+
+	<input type='checkbox' class="showhide" id="unexported-variables-showhide"><i><label for="unexported-variables-showhide" class="show-inline">/* one unexported ... */</label><label for="unexported-variables-showhide" class="hide-inline">/* one unexported: */</label></i><div class="anchor value-res hidden" id="name-tokenString"><i>	<span class="nodocs">  <a href="../../use/text/scanner..tokenString^efa45.html">var</a> <a href="../../src/text/scanner/scanner.go.html#line-91">tokenString</a> map[<a href="../builtin.html#name-rune">rune</a>]<a href="../builtin.html#name-string">string</a></span></i></div></div>
+<div id="exported-constants"><span class="title">Package-Level Constants<span class="title-stat"><i> (total 20, in which 18 are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-Char">	<input type='checkbox' class="fold" id="Char-fold-content"><label for="Char-fold-content"><a href="../../use/text/scanner..Char^cbaeb.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-82">Char</a> = -5</label><span id='Char-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div><div class="anchor value-res" id="name-Comment">	<input type='checkbox' class="fold" id="Comment-fold-content"><label for="Comment-fold-content"><a href="../../use/text/scanner..Comment.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-85">Comment</a> = -8</label><span id='Comment-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div><div class="anchor value-res" id="name-EOF">	<input type='checkbox' class="fold" id="EOF-fold-content"><label for="EOF-fold-content"><a href="../../use/text/scanner..EOF.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-78">EOF</a> = -1</label><span id='EOF-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div><div class="anchor value-res" id="name-Float">	<input type='checkbox' class="fold" id="Float-fold-content"><label for="Float-fold-content"><a href="../../use/text/scanner..Float.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-81">Float</a> = -4</label><span id='Float-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div><div class="anchor value-res" id="name-GoTokens">	<input type='checkbox' class="fold" id="GoTokens-fold-content"><label for="GoTokens-fold-content"><a href="../../use/text/scanner..GoTokens.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-73">GoTokens</a> = 1012</label><span id='GoTokens-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-GoWhitespace">	<input type='checkbox' class="fold" id="GoWhitespace-fold-content"><label for="GoWhitespace-fold-content"><a href="../../use/text/scanner..GoWhitespace.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-112">GoWhitespace</a> = 4294977024</label><span id='GoWhitespace-fold-content-docs' class="fold-docs">
+		GoWhitespace is the default value for the Scanner's Whitespace field.
+		Its value selects Go's white space characters.
+
+</span></div><div class="anchor value-res" id="name-Ident">	<input type='checkbox' class="fold" id="Ident-fold-content"><label for="Ident-fold-content"><a href="../../use/text/scanner..Ident.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-79">Ident</a> = -2</label><span id='Ident-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div><div class="anchor value-res" id="name-Int">	<input type='checkbox' class="fold" id="Int-fold-content"><label for="Int-fold-content"><a href="../../use/text/scanner..Int.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-80">Int</a> = -3</label><span id='Int-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div><div class="anchor value-res" id="name-RawString">	<input type='checkbox' class="fold" id="RawString-fold-content"><label for="RawString-fold-content"><a href="../../use/text/scanner..RawString.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-84">RawString</a> = -7</label><span id='RawString-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div><div class="anchor value-res" id="name-ScanChars">	<input type='checkbox' class="fold" id="ScanChars-fold-content"><label for="ScanChars-fold-content"><a href="../../use/text/scanner..ScanChars.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-68">ScanChars</a> = 32</label><span id='ScanChars-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-ScanComments">	<input type='checkbox' class="fold" id="ScanComments-fold-content"><label for="ScanComments-fold-content"><a href="../../use/text/scanner..ScanComments.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-71">ScanComments</a> = 256</label><span id='ScanComments-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-ScanFloats">	<input type='checkbox' class="fold" id="ScanFloats-fold-content"><label for="ScanFloats-fold-content"><a href="../../use/text/scanner..ScanFloats.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-67">ScanFloats</a> = 16 // includes Ints and hexadecimal floats</label><span id='ScanFloats-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-ScanIdents">	<input type='checkbox' class="fold" id="ScanIdents-fold-content"><label for="ScanIdents-fold-content"><a href="../../use/text/scanner..ScanIdents.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-65">ScanIdents</a> = 4</label><span id='ScanIdents-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-ScanInts">	<input type='checkbox' class="fold" id="ScanInts-fold-content"><label for="ScanInts-fold-content"><a href="../../use/text/scanner..ScanInts.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-66">ScanInts</a> = 8</label><span id='ScanInts-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-ScanRawStrings">	<input type='checkbox' class="fold" id="ScanRawStrings-fold-content"><label for="ScanRawStrings-fold-content"><a href="../../use/text/scanner..ScanRawStrings.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-70">ScanRawStrings</a> = 128</label><span id='ScanRawStrings-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-ScanStrings">	<input type='checkbox' class="fold" id="ScanStrings-fold-content"><label for="ScanStrings-fold-content"><a href="../../use/text/scanner..ScanStrings.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-69">ScanStrings</a> = 64</label><span id='ScanStrings-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-SkipComments">	<input type='checkbox' class="fold" id="SkipComments-fold-content"><label for="SkipComments-fold-content"><a href="../../use/text/scanner..SkipComments.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-72">SkipComments</a> = 512 // if set with ScanComments, comments become white space</label><span id='SkipComments-fold-content-docs' class="fold-docs">
+		Predefined mode bits to control recognition of tokens. For instance,
+		to configure a Scanner such that it only recognizes (Go) identifiers,
+		integers, and skips comments, set the Scanner's Mode field to:
+
+			ScanIdents | ScanInts | SkipComments
+
+		With the exceptions of comments, which are skipped if SkipComments is
+		set, unrecognized tokens are not ignored. Instead, the scanner simply
+		returns the respective individual characters (or possibly sub-tokens).
+		For instance, if the mode is ScanIdents (not ScanStrings), the string
+		"foo" is scanned as the token sequence '"' Ident '"'.
+
+		Use GoTokens to configure the Scanner such that it accepts all Go
+		literal tokens including Go identifiers. Comments will be skipped.
+
+</span></div><div class="anchor value-res" id="name-String">	<input type='checkbox' class="fold" id="String-fold-content"><label for="String-fold-content"><a href="../../use/text/scanner..String.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-83">String</a> = -6</label><span id='String-fold-content-docs' class="fold-docs">
+		The result of Scan is one of these tokens or a Unicode character.
+
+</span></div>	<input type='checkbox' class="showhide" id="unexported-constants-showhide"><i><label for="unexported-constants-showhide" class="show-inline">/* 2 unexporteds ... */</label><label for="unexported-constants-showhide" class="hide-inline">/* 2 unexporteds: */</label></i><div class="anchor value-res hidden" id="name-bufLen"><i>	<span class="nodocs"><a href="../../use/text/scanner..bufLen^d720a.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-114">bufLen</a> = 1024 // at least utf8.UTFMax</span></i></div><div class="anchor value-res hidden" id="name-skipComment"><i>	<input type='checkbox' class="fold" id="skipComment-fold-content"><label for="skipComment-fold-content"><a href="../../use/text/scanner..skipComment^87b23.html">const</a> <a href="../../src/text/scanner/scanner.go.html#line-88">skipComment</a> = -9</label><span id='skipComment-fold-content-docs' class="fold-docs">
+		internal use only
+
+</span></i></div></div></code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

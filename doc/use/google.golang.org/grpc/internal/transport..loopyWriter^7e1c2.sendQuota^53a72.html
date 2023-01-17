@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.loopyWriter.sendQuota</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-462">loopyWriter</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-465">sendQuota</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">8 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-465">controlbuf.go#L465</a>: 	<b>sendQuota</b> uint32
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-491" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-491">#L491</a>: 		<b>sendQuota</b>:     defaultWindowSize,
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-589" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-589">#L589</a>: 		l.<b>sendQuota</b> += w.increment
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-748" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-748">#L748</a>: 	o.resp &lt;- l.<b>sendQuota</b>
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-879" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-879">#L879</a>: 	if l.<b>sendQuota</b> == 0 {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-924" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-924">#L924</a>: 	if maxSize &gt; int(l.<b>sendQuota</b>) { // connection-level flow control.
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-925" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-925">#L925</a>: 		maxSize = int(l.<b>sendQuota</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-961" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-961">#L961</a>: 	l.<b>sendQuota</b> -= uint32(size)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

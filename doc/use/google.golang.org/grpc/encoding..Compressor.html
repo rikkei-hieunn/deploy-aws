@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/encoding.Compressor</title>
+<link href="../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/google.golang.org/grpc/encoding.html">google.golang.org/grpc/encoding</a>.<a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-41">Compressor</a></b></span>
+
+<span class="title">21 uses</span>
+
+	google.golang.org/grpc/encoding (current package)
+		<a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-41">encoding.go#L41</a>: type <b>Compressor</b> interface {
+		<a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-65" class="path-duplicate">encoding.go</a><a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-65">#L65</a>: var registeredCompressor = make(map[string]<b>Compressor</b>)
+		<a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-76" class="path-duplicate">encoding.go</a><a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-76">#L76</a>: func RegisterCompressor(c <b>Compressor</b>) {
+		<a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-82" class="path-duplicate">encoding.go</a><a href="../../../src/google.golang.org/grpc/encoding/encoding.go.html#line-82">#L82</a>: func GetCompressor(name string) <b>Compressor</b> {
+
+	<a href="../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-609">rpc_util.go#L609</a>: func compress(in []byte, cp Compressor, compressor encoding.<b>Compressor</b>) ([]byte, error) {
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-690" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-690">#L690</a>: func recvAndDecompress(p *parser, s *transport.Stream, dc Decompressor, maxReceiveMessageSize int, payInfo *payloadInfo, compressor encoding.<b>Compressor</b>) ([]byte, error) {
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-727" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-727">#L727</a>: func decompress(compressor encoding.<b>Compressor</b>, d []byte, maxReceiveMessageSize int) ([]byte, int, error) {
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-756" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-756">#L756</a>: func recv(p *parser, c baseCodec, s *transport.Stream, dc Decompressor, m interface{}, maxReceiveMessageSize int, payInfo *payloadInfo, compressor encoding.<b>Compressor</b>) error {
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-784" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-784">#L784</a>: 	comp  encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-789" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-789">#L789</a>: func newContextWithRPCInfo(ctx context.Context, failfast bool, codec baseCodec, cp Compressor, comp encoding.<b>Compressor</b>) context.Context {
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1105">server.go#L1105</a>: func (s *Server) sendResponse(t transport.ServerTransport, stream *transport.Stream, msg interface{}, cp Compressor, opts *transport.Options, comp encoding.<b>Compressor</b>) error {
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1267" class="path-duplicate">server.go</a><a href="../../../src/google.golang.org/grpc/server.go.html#line-1267">#L1267</a>: 	var comp, decomp encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-277">stream.go#L277</a>: 	var comp encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-488" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-488">#L488</a>: 	comp  encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-541" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-541">#L541</a>: 	decomp    encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1195" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1195">#L1195</a>: 	var comp encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1266" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1266">#L1266</a>: 	comp      encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1269" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1269">#L1269</a>: 	decomp    encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1489" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1489">#L1489</a>: 	comp   encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1490" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1490">#L1490</a>: 	decomp encoding.<b>Compressor</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1702" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1702">#L1702</a>: func prepareMsg(m interface{}, codec baseCodec, cp Compressor, comp encoding.<b>Compressor</b>) (hdr, payload, data []byte, err error) {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

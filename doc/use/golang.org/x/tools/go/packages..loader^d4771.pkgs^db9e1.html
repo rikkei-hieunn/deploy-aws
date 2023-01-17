@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/tools/go/packages.loader.pkgs</title>
+<link href="../../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/golang.org/x/tools/go/packages.html">golang.org/x/tools/go/packages</a>.<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-548">loader</a>.<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-549">pkgs</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">25 uses</span>
+
+	golang.org/x/tools/go/packages (current package)
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-549">packages.go#L549</a>: 	<b>pkgs</b> map[string]*loaderPackage
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-637" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-637">#L637</a>: 	ld.<b>pkgs</b> = make(map[string]*loaderPackage)
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-664" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-664">#L664</a>: 		ld.<b>pkgs</b>[lpkg.ID] = lpkg
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-712" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-712">#L712</a>: 				imp := ld.<b>pkgs</b>[ipkg.ID]
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-761" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-761">#L761</a>: 				imp := ld.<b>pkgs</b>[ipkg.ID]
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-784" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-784">#L784</a>: 	for i := range ld.<b>pkgs</b> {
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-788" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-788">#L788</a>: 			ld.<b>pkgs</b>[i].Name = ""
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-789" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-789">#L789</a>: 			ld.<b>pkgs</b>[i].PkgPath = ""
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-792" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-792">#L792</a>: 			ld.<b>pkgs</b>[i].GoFiles = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-793" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-793">#L793</a>: 			ld.<b>pkgs</b>[i].OtherFiles = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-794" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-794">#L794</a>: 			ld.<b>pkgs</b>[i].IgnoredFiles = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-797" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-797">#L797</a>: 			ld.<b>pkgs</b>[i].EmbedFiles = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-800" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-800">#L800</a>: 			ld.<b>pkgs</b>[i].EmbedPatterns = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-803" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-803">#L803</a>: 			ld.<b>pkgs</b>[i].CompiledGoFiles = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-806" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-806">#L806</a>: 			ld.<b>pkgs</b>[i].Imports = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-809" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-809">#L809</a>: 			ld.<b>pkgs</b>[i].ExportFile = ""
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-812" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-812">#L812</a>: 			ld.<b>pkgs</b>[i].Types = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-813" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-813">#L813</a>: 			ld.<b>pkgs</b>[i].Fset = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-814" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-814">#L814</a>: 			ld.<b>pkgs</b>[i].IllTyped = false
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-817" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-817">#L817</a>: 			ld.<b>pkgs</b>[i].Syntax = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-820" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-820">#L820</a>: 			ld.<b>pkgs</b>[i].TypesInfo = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-823" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-823">#L823</a>: 			ld.<b>pkgs</b>[i].TypesSizes = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-826" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-826">#L826</a>: 			ld.<b>pkgs</b>[i].Module = nil
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-842" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-842">#L842</a>: 			imp := ld.<b>pkgs</b>[ipkg.ID]
+		<a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-1269" class="path-duplicate">packages.go</a><a href="../../../../../src/golang.org/x/tools/go/packages/packages.go.html#line-1269">#L1269</a>: 			lpkg := ld.<b>pkgs</b>[p.ID]
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

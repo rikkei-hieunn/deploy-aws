@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.Stream.ctx</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-243">Stream</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-247">ctx</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">35 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-371">handler_server.go#L371</a>: 	s.<b>ctx</b> = peer.NewContext(ctx, pr)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-373" class="path-duplicate">handler_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-373">#L373</a>: 		s.<b>ctx</b> = sh.TagRPC(s.<b>ctx</b>, &amp;stats.RPCTagInfo{FullMethodName: s.method})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-379" class="path-duplicate">handler_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-379">#L379</a>: 		sh.HandleRPC(s.<b>ctx</b>, inHeader)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-382" class="path-duplicate">handler_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-382">#L382</a>: 		reader:        &amp;recvBufferReader{ctx: s.<b>ctx</b>, ctxDone: s.<b>ctx</b>.Done(), recv: s.buf, freeBuffer: func(*bytes.Buffer) {}},
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-476">http2_client.go#L476</a>: 	s.<b>ctx</b> = ctx
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-479" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-479">#L479</a>: 			ctx:     s.<b>ctx</b>,
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-480" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-480">#L480</a>: 			ctxDone: s.<b>ctx</b>.Done(),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-846" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-846">#L846</a>: 			sh.HandleRPC(s.<b>ctx</b>, outHeader)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1156" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1156">#L1156</a>: 		if d, ok := s.<b>ctx</b>.Deadline(); ok &amp;&amp; !d.After(time.Now()) {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1504" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1504">#L1504</a>: 			sh.HandleRPC(s.<b>ctx</b>, inHeader)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1511" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1511">#L1511</a>: 			sh.HandleRPC(s.<b>ctx</b>, inTrailer)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-487">http2_server.go#L487</a>: 		s.<b>ctx</b>, s.cancel = context.WithTimeout(t.ctx, timeout)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-489" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-489">#L489</a>: 		s.<b>ctx</b>, s.cancel = context.WithCancel(t.ctx)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-494" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-494">#L494</a>: 		s.<b>ctx</b> = metadata.NewIncomingContext(s.<b>ctx</b>, mdata)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-496" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-496">#L496</a>: 			s.<b>ctx</b> = stats.SetIncomingTags(s.<b>ctx</b>, []byte(statsTags[len(statsTags)-1]))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-499" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-499">#L499</a>: 			s.<b>ctx</b> = stats.SetIncomingTrace(s.<b>ctx</b>, []byte(statsTrace[len(statsTrace)-1]))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-537" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-537">#L537</a>: 		if s.<b>ctx</b>, err = t.inTapHandle(s.<b>ctx</b>, &amp;tap.Info{FullMethodName: s.method}); err != nil {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-568" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-568">#L568</a>: 	s.<b>ctx</b> = traceCtx(s.<b>ctx</b>, s.method)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-570" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-570">#L570</a>: 		s.<b>ctx</b> = sh.TagRPC(s.<b>ctx</b>, &amp;stats.RPCTagInfo{FullMethodName: s.method})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-579" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-579">#L579</a>: 		sh.HandleRPC(s.<b>ctx</b>, inHeader)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-581" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-581">#L581</a>: 	s.ctxDone = s.<b>ctx</b>.Done()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-585" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-585">#L585</a>: 			ctx:        s.<b>ctx</b>,
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-939" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-939">#L939</a>: 	return ContextErr(s.<b>ctx</b>.Err())
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-247">transport.go#L247</a>: 	<b>ctx</b>          context.Context    // the associated context of the stream
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-329" class="path-duplicate">transport.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-329">#L329</a>: 	case &lt;-s.<b>ctx</b>.Done():
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-332" class="path-duplicate">transport.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-332">#L332</a>: 		s.ct.CloseStream(s, ContextErr(s.<b>ctx</b>.Err()))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-414" class="path-duplicate">transport.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-414">#L414</a>: 	return s.<b>ctx</b>
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

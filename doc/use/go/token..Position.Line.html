@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go/token.Position.Line</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/go/token.html">go/token</a>.<a href="../../src/go/token/position.go.html#line-20">Position</a>.<a href="../../src/text/scanner/scanner.go.html#line-31">Line</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	<a href="../../pkg/text/scanner.html">text/scanner</a>
+		<a href="../../src/text/scanner/scanner.go.html#line-31">scanner.go#L31</a>: 	<b>Line</b>     int    // line number, starting at 1
+		<a href="../../src/text/scanner/scanner.go.html#line-36" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-36">#L36</a>: func (pos *Position) IsValid() bool { return pos.<b>Line</b> &gt; 0 }
+		<a href="../../src/text/scanner/scanner.go.html#line-44" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-44">#L44</a>: 		s += fmt.Sprintf(":%d:%d", pos.<b>Line</b>, pos.Column)
+		<a href="../../src/text/scanner/scanner.go.html#line-210" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-210">#L210</a>: 	s.<b>Line</b> = 0 // invalidate token position
+		<a href="../../src/text/scanner/scanner.go.html#line-307" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-307">#L307</a>: 	s.<b>Line</b> = 0    // invalidate token position
+		<a href="../../src/text/scanner/scanner.go.html#line-652" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-652">#L652</a>: 	s.<b>Line</b> = 0
+		<a href="../../src/text/scanner/scanner.go.html#line-669" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-669">#L669</a>: 		s.<b>Line</b> = s.line
+		<a href="../../src/text/scanner/scanner.go.html#line-675" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-675">#L675</a>: 		s.<b>Line</b> = s.line - 1
+		<a href="../../src/text/scanner/scanner.go.html#line-755" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-755">#L755</a>: 		pos.<b>Line</b> = s.line
+		<a href="../../src/text/scanner/scanner.go.html#line-759" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-759">#L759</a>: 		pos.<b>Line</b> = s.line - 1
+		<a href="../../src/text/scanner/scanner.go.html#line-763" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-763">#L763</a>: 		pos.<b>Line</b> = 1
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

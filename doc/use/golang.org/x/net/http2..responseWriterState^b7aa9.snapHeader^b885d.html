@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.responseWriterState.snapHeader</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2491">responseWriterState</a>.<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2502">snapHeader</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">12 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2502">server.go#L2502</a>: 	<b>snapHeader</b>    http.Header // snapshot of handlerHeader at WriteHeader time
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2574" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2574">#L2574</a>: 		if clen = rws.<b>snapHeader</b>.Get("Content-Length"); clen != "" {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2575" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2575">#L2575</a>: 			rws.<b>snapHeader</b>.Del("Content-Length")
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2585" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2585">#L2585</a>: 		_, hasContentType := rws.<b>snapHeader</b>["Content-Type"]
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2588" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2588">#L2588</a>: 		ce := rws.<b>snapHeader</b>.Get("Content-Encoding")
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2594" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2594">#L2594</a>: 		if _, ok := rws.<b>snapHeader</b>["Date"]; !ok {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2599" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2599">#L2599</a>: 		for _, v := range rws.<b>snapHeader</b>["Trailer"] {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2608" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2608">#L2608</a>: 		if _, ok := rws.<b>snapHeader</b>["Connection"]; ok {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2609" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2609">#L2609</a>: 			v := rws.<b>snapHeader</b>.Get("Connection")
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2610" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2610">#L2610</a>: 			delete(rws.<b>snapHeader</b>, "Connection")
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2620" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2620">#L2620</a>: 			h:             rws.<b>snapHeader</b>,
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2893" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2893">#L2893</a>: 		rws.<b>snapHeader</b> = cloneHeader(rws.handlerHeader)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

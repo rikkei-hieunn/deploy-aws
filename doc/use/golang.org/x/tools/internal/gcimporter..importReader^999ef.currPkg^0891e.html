@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/tools/internal/gcimporter.importReader.currPkg</title>
+<link href="../../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/golang.org/x/tools/internal/gcimporter.html">golang.org/x/tools/internal/gcimporter</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-401">importReader</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-404">currPkg</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">17 uses</span>
+
+	golang.org/x/tools/internal/gcimporter (current package)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-334">iimport.go#L334</a>: 	r := &amp;importReader{p: p, <b>currPkg</b>: pkg}
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-404" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-404">#L404</a>: 	<b>currPkg</b>    *types.Package
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-418" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-418">#L418</a>: 		r.declare(types.NewTypeName(pos, r.<b>currPkg</b>, name, typ))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-423" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-423">#L423</a>: 		r.declare(types.NewConst(pos, r.<b>currPkg</b>, name, typ, val))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-431" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-431">#L431</a>: 		r.declare(types.NewFunc(pos, r.<b>currPkg</b>, name, sig))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-436" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-436">#L436</a>: 		obj := types.NewTypeName(pos, r.<b>currPkg</b>, name, nil)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-470" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-470">#L470</a>: 				named.AddMethod(types.NewFunc(mpos, r.<b>currPkg</b>, mname, msig))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-482" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-482">#L482</a>: 		tn := types.NewTypeName(pos, r.<b>currPkg</b>, name0, nil)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-487" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-487">#L487</a>: 		id := ident{r.<b>currPkg</b>, name}
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-510" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-510">#L510</a>: 		r.declare(types.NewVar(pos, r.<b>currPkg</b>, name, typ))
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-728" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-728">#L728</a>: 		r.<b>currPkg</b> = r.pkg()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-732" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-732">#L732</a>: 		r.<b>currPkg</b> = r.pkg()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-743" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-743">#L743</a>: 			fields[i] = types.NewField(fpos, r.<b>currPkg</b>, fname, ftyp, emb)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-749" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-749">#L749</a>: 		r.<b>currPkg</b> = r.pkg()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-766" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-766">#L766</a>: 				recv = types.NewVar(token.NoPos, r.<b>currPkg</b>, "", base)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-770" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-770">#L770</a>: 			methods[i] = types.NewFunc(mpos, r.<b>currPkg</b>, mname, msig)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-859" class="path-duplicate">iimport.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/iimport.go.html#line-859">#L859</a>: 	return types.NewParam(pos, r.<b>currPkg</b>, name, typ)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

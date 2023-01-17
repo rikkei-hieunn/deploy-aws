@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.Framer.writeUint32</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-265">Framer</a>.<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-399">writeUint32</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">9 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-399">frame.go#L399</a>: func (f *Framer) <b>writeUint32</b>(v uint32) {
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-823" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-823">#L823</a>: 		f.<b>writeUint32</b>(s.Val)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-909" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-909">#L909</a>: 	f.<b>writeUint32</b>(maxStreamID &amp; (1&lt;&lt;31 - 1))
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-910" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-910">#L910</a>: 	f.<b>writeUint32</b>(uint32(code))
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-979" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-979">#L979</a>: 	f.<b>writeUint32</b>(incr)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1117" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1117">#L1117</a>: 		f.<b>writeUint32</b>(v)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1190" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1190">#L1190</a>: 	f.<b>writeUint32</b>(v)
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1223" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1223">#L1223</a>: 	f.<b>writeUint32</b>(uint32(code))
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1372" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1372">#L1372</a>: 	f.<b>writeUint32</b>(p.PromiseID)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

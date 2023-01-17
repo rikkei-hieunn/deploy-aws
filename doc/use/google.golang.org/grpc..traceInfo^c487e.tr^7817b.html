@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.traceInfo.tr</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/trace.go.html#line-48">traceInfo</a>.<a href="../../src/google.golang.org/grpc/trace.go.html#line-49">tr</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">50 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1033">server.go#L1033</a>: 		<b>tr</b>: tr,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1188" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1188">#L1188</a>: 			trInfo.<b>tr</b>.LazyLog(&amp;trInfo.firstLine, false)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1203" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1203">#L1203</a>: 					trInfo.<b>tr</b>.LazyLog(&amp;fmtStringer{"%v", []interface{}{err}}, true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1204" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1204">#L1204</a>: 					trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1206" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1206">#L1206</a>: 				trInfo.<b>tr</b>.Finish()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1335" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1335">#L1335</a>: 			trInfo.<b>tr</b>.LazyLog(&amp;payload{sent: false, msg: v}, true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1350" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1350">#L1350</a>: 			trInfo.<b>tr</b>.LazyLog(stringer(appStatus.Message()), true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1351" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1351">#L1351</a>: 			trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1378" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1378">#L1378</a>: 		trInfo.<b>tr</b>.LazyLog(stringer("OK"), false)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1432" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1432">#L1432</a>: 		trInfo.<b>tr</b>.LazyLog(&amp;payload{sent: true, msg: reply}, true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1527" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1527">#L1527</a>: 					ss.trInfo.<b>tr</b>.LazyLog(&amp;fmtStringer{"%v", []interface{}{err}}, true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1528" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1528">#L1528</a>: 					ss.trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1530" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1530">#L1530</a>: 				ss.trInfo.<b>tr</b>.Finish()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1531" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1531">#L1531</a>: 				ss.trInfo.<b>tr</b> = nil
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1621" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1621">#L1621</a>: 		trInfo.<b>tr</b>.LazyLog(&amp;trInfo.firstLine, false)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1648" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1648">#L1648</a>: 			ss.trInfo.<b>tr</b>.LazyLog(stringer(appStatus.Message()), true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1649" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1649">#L1649</a>: 			ss.trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1667" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1667">#L1667</a>: 		ss.trInfo.<b>tr</b>.LazyLog(stringer("OK"), false)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1691" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1691">#L1691</a>: 			trInfo.<b>tr</b>.LazyLog(&amp;fmtStringer{"Malformed method name %q", []interface{}{sm}}, true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1692" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1692">#L1692</a>: 			trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1697" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1697">#L1697</a>: 				trInfo.<b>tr</b>.LazyLog(&amp;fmtStringer{"%v", []interface{}{err}}, true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1698" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1698">#L1698</a>: 				trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1703" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1703">#L1703</a>: 			trInfo.<b>tr</b>.Finish()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1733" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1733">#L1733</a>: 		trInfo.<b>tr</b>.LazyPrintf("%s", errDesc)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1734" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1734">#L1734</a>: 		trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1738" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1738">#L1738</a>: 			trInfo.<b>tr</b>.LazyLog(&amp;fmtStringer{"%v", []interface{}{err}}, true)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1739" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1739">#L1739</a>: 			trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1744" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1744">#L1744</a>: 		trInfo.<b>tr</b>.Finish()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-407">stream.go#L407</a>: 			<b>tr</b>: trace.New("grpc.Sent."+methodFamily(method), method),
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-415" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-415">#L415</a>: 		trInfo.<b>tr</b>.LazyLog(&amp;trInfo.firstLine, false)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-416" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-416">#L416</a>: 		ctx = trace.NewContext(ctx, trInfo.<b>tr</b>)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-996" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-996">#L996</a>: 		if a.trInfo.<b>tr</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-997" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-997">#L997</a>: 			a.trInfo.<b>tr</b>.LazyLog(&amp;payload{sent: true, msg: m}, true)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1054" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1054">#L1054</a>: 		if a.trInfo.<b>tr</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1055" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1055">#L1055</a>: 			a.trInfo.<b>tr</b>.LazyLog(&amp;payload{sent: false, msg: m}, true)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1129" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1129">#L1129</a>: 	if a.trInfo != nil &amp;&amp; a.trInfo.<b>tr</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1131" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1131">#L1131</a>: 			a.trInfo.<b>tr</b>.LazyPrintf("RPC: [OK]")
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1133" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1133">#L1133</a>: 			a.trInfo.<b>tr</b>.LazyPrintf("RPC: [%v]", err)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1134" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1134">#L1134</a>: 			a.trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1136" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1136">#L1136</a>: 		a.trInfo.<b>tr</b>.Finish()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1137" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1137">#L1137</a>: 		a.trInfo.<b>tr</b> = nil
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1559" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1559">#L1559</a>: 			if ss.trInfo.<b>tr</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1561" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1561">#L1561</a>: 					ss.trInfo.<b>tr</b>.LazyLog(&amp;payload{sent: true, msg: m}, true)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1563" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1563">#L1563</a>: 					ss.trInfo.<b>tr</b>.LazyLog(&amp;fmtStringer{"%v", []interface{}{err}}, true)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1564" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1564">#L1564</a>: 					ss.trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1627" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1627">#L1627</a>: 			if ss.trInfo.<b>tr</b> != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1629" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1629">#L1629</a>: 					ss.trInfo.<b>tr</b>.LazyLog(&amp;payload{sent: false, msg: m}, true)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1631" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1631">#L1631</a>: 					ss.trInfo.<b>tr</b>.LazyLog(&amp;fmtStringer{"%v", []interface{}{err}}, true)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1632" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1632">#L1632</a>: 					ss.trInfo.<b>tr</b>.SetError()
+		<a href="../../src/google.golang.org/grpc/trace.go.html#line-49">trace.go#L49</a>: 	<b>tr</b>        trace.Trace
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

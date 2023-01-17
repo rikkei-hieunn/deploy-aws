@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: text/scanner.Scanner.srcBufOffset</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/text/scanner.html">text/scanner</a>.<a href="../../src/text/scanner/scanner.go.html#line-117">Scanner</a>.<a href="../../src/text/scanner/scanner.go.html#line-127">srcBufOffset</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">5 uses</span>
+
+	text/scanner (current package)
+		<a href="../../src/text/scanner/scanner.go.html#line-127">scanner.go#L127</a>: 	<b>srcBufOffset</b> int // byte offset of srcBuf[0] in source
+		<a href="../../src/text/scanner/scanner.go.html#line-192" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-192">#L192</a>: 	s.<b>srcBufOffset</b> = 0
+		<a href="../../src/text/scanner/scanner.go.html#line-234" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-234">#L234</a>: 			s.<b>srcBufOffset</b> += s.srcPos
+		<a href="../../src/text/scanner/scanner.go.html#line-666" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-666">#L666</a>: 	s.Offset = s.<b>srcBufOffset</b> + s.tokPos
+		<a href="../../src/text/scanner/scanner.go.html#line-751" class="path-duplicate">scanner.go</a><a href="../../src/text/scanner/scanner.go.html#line-751">#L751</a>: 	pos.Offset = s.<b>srcBufOffset</b> + s.srcPos - s.lastCharLen
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

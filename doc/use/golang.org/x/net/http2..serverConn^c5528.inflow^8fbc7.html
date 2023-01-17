@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/net/http2.serverConn.inflow</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>.<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-551">serverConn</a>.<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-567">inflow</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	golang.org/x/net/http2 (current package)
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-451">server.go#L451</a>: 	sc.<b>inflow</b>.add(initialWindowSize)
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-567" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-567">#L567</a>: 	<b>inflow</b>           flow                   // conn-wide inbound flow control
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1506" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1506">#L1506</a>: 			if sc.<b>inflow</b>.available() &lt; int32(f.Length) {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1778" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1778">#L1778</a>: 		if sc.<b>inflow</b>.available() &lt; int32(f.Length) {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1785" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1785">#L1785</a>: 		sc.<b>inflow</b>.take(int32(f.Length))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1800" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1800">#L1800</a>: 		if sc.<b>inflow</b>.available() &lt; int32(f.Length) {
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1803" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-1803">#L1803</a>: 		sc.<b>inflow</b>.take(int32(f.Length))
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2108" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2108">#L2108</a>: 	st.inflow.conn = &amp;sc.<b>inflow</b> // link to conn-level counter
+		<a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2425" class="path-duplicate">server.go</a><a href="../../../../src/golang.org/x/net/http2/server.go.html#line-2425">#L2425</a>: 		ok = sc.<b>inflow</b>.add(n)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

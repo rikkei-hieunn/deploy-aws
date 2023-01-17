@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: golang.org/x/tools/internal/gcimporter.parser.scanner</title>
+<link href="../../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/golang.org/x/tools/internal/gcimporter.html">golang.org/x/tools/internal/gcimporter</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-312">parser</a>.<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-313">scanner</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">14 uses</span>
+
+	golang.org/x/tools/internal/gcimporter (current package)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-313">gcimporter.go#L313</a>: 	<b>scanner</b>    scanner.Scanner
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-322" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-322">#L322</a>: 	p.<b>scanner</b>.Init(src)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-323" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-323">#L323</a>: 	p.<b>scanner</b>.Error = func(_ *scanner.Scanner, msg string) { p.error(msg) }
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-324" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-324">#L324</a>: 	p.<b>scanner</b>.Mode = scanner.ScanIdents | scanner.ScanInts | scanner.ScanChars | scanner.ScanStrings | scanner.ScanComments | scanner.SkipComments
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-325" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-325">#L325</a>: 	p.<b>scanner</b>.Whitespace = 1&lt;&lt;'\t' | 1&lt;&lt;' '
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-326" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-326">#L326</a>: 	p.<b>scanner</b>.Filename = filename // for good error messages
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-341" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-341">#L341</a>: 	p.tok = p.<b>scanner</b>.Scan()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-344" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-344">#L344</a>: 		p.lit = p.<b>scanner</b>.TokenText()
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-349" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-349">#L349</a>: 		fmt.Printf("%s: %q -&gt; %q\n", scanner.TokenString(p.tok), p.<b>scanner</b>.TokenText(), p.lit)
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-384" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-384">#L384</a>: 	panic(importError{p.<b>scanner</b>.Pos(), err.(error)})
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-404" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-404">#L404</a>: 		sep = p.<b>scanner</b>.Peek() // if sep &lt;= ' ', there is white space before the next token
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-455" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-455">#L455</a>: 			sep = p.<b>scanner</b>.Peek() // if sep &lt;= ' ', there is white space before the next token
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1148" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1148">#L1148</a>: 	if ch := p.<b>scanner</b>.Peek(); p.tok != '$' || ch != '$' {
+		<a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1154" class="path-duplicate">gcimporter.go</a><a href="../../../../../src/golang.org/x/tools/internal/gcimporter/gcimporter.go.html#line-1154">#L1154</a>: 	if n := p.<b>scanner</b>.ErrorCount; n != 0 {
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

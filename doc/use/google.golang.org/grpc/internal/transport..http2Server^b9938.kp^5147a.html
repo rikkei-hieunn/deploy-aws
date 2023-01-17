@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.http2Server.kp</title>
+<link href="../../../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-66">http2Server</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-87">kp</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-87">http2_server.go#L87</a>: 	<b>kp</b> keepalive.ServerParameters
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-261" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-261">#L261</a>: 		<b>kp</b>:                kp,
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1116" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1116">#L1116</a>: 	idleTimer := time.NewTimer(t.<b>kp</b>.MaxConnectionIdle)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1117" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1117">#L1117</a>: 	ageTimer := time.NewTimer(t.<b>kp</b>.MaxConnectionAge)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1118" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1118">#L1118</a>: 	kpTimer := time.NewTimer(t.<b>kp</b>.Time)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1135" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1135">#L1135</a>: 				idleTimer.Reset(t.<b>kp</b>.MaxConnectionIdle)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1138" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1138">#L1138</a>: 			val := t.<b>kp</b>.MaxConnectionIdle - time.Since(idle)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1149" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1149">#L1149</a>: 			ageTimer.Reset(t.<b>kp</b>.MaxConnectionAgeGrace)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1167" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1167">#L1167</a>: 				kpTimer.Reset(time.Duration(lastRead) + t.<b>kp</b>.Time - time.Duration(time.Now().UnixNano()))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1183" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1183">#L1183</a>: 				kpTimeoutLeft = t.<b>kp</b>.Timeout
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1190" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1190">#L1190</a>: 			sleepDuration := minTime(t.<b>kp</b>.Time, kpTimeoutLeft)
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>

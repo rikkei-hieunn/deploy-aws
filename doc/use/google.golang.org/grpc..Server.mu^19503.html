@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.Server.mu</title>
+<link href="../../css/light-v0.4.9.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.9.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/server.go.html#line-125">Server</a>.<a href="../../src/google.golang.org/grpc/server.go.html#line-128">mu</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">31 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-128">server.go#L128</a>: 	<b>mu</b>  sync.Mutex // guards following
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-620" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-620">#L620</a>: 	s.cv = sync.NewCond(&amp;s.<b>mu</b>)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-679" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-679">#L679</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-680" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-680">#L680</a>: 	defer s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-781" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-781">#L781</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-786" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-786">#L786</a>: 		s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-804" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-804">#L804</a>: 		s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-809" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-809">#L809</a>: 		s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-815" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-815">#L815</a>: 		s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-818" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-818">#L818</a>: 	s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-836" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-836">#L836</a>: 				s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-838" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-838">#L838</a>: 				s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-848" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-848">#L848</a>: 			s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-850" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-850">#L850</a>: 			s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-897" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-897">#L897</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-902" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-902">#L902</a>: 	s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-926" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-926">#L926</a>: 		s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-928" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-928">#L928</a>: 		s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1046" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1046">#L1046</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1047" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1047">#L1047</a>: 	defer s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1067" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1067">#L1067</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1068" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1068">#L1068</a>: 	defer s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1808" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1808">#L1808</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1815" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1815">#L1815</a>: 	s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1829" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1829">#L1829</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1834" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1834">#L1834</a>: 	s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1845" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1845">#L1845</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1847" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1847">#L1847</a>: 		s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1866" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1866">#L1866</a>: 	s.<b>mu</b>.Unlock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1868" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1868">#L1868</a>: 	s.<b>mu</b>.Lock()
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1878" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1878">#L1878</a>: 	s.<b>mu</b>.Unlock()
+</code></pre><pre id="footer">
+The pages are generated with <a href="https://go101.org/apps-and-libs/golds.html"><b>Golds</b></a> <i>v0.4.9</i>. (GOOS=linux GOARCH=amd64)</pre>
