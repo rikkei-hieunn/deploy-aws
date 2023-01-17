@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+
+  # See https://github.com/dependabot/dependabot-core/issues/4178#issuecomment-1118492006
+  - package-ecosystem: github-actions
+    directory: "/.github/actions/setup-go-with-cache"
+    schedule:
+      interval: daily
+  - package-ecosystem: github-actions
+    directory: "/.github/actions/setup-golangci-lint"
+    schedule:
+      interval: daily
+  - package-ecosystem: github-actions
+    directory: "/.github/actions/read-file"
+    schedule:
+      interval: daily

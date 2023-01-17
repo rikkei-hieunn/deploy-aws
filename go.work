@@ -1,0 +1,26 @@
+go 1.18
+
+use (
+	awsenv
+	basicauth
+	clock
+	crypt
+	extraio
+	flaky
+	goupdate
+	grpcprocess
+	httpclient
+	httpdebug
+	jsonlazy
+	maininfo
+	names
+	option
+	pgtxtar
+	phcformat
+	process
+	syncx
+	task
+	zapjournal
+	zapjournal/tests
+	zaplog
+)
