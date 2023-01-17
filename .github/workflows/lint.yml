@@ -18,23 +18,3 @@ jobs:
         run: |-
           golangci-lint run --out-format=github-actions -- \
             $(go work edit -json | jq -c -r '[.Use[].DiskPath] | map_values(. + "/...")[]')
-
-  commitlint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3.2.0
-        with:
-          fetch-depth: 0
-      - name: Create config
-        run: |-
-          cat >commitlint.config.js <<EOF
-          module.exports = {
-            extends: ['@commitlint/config-conventional'],
-            rules: {
-              'body-max-line-length': [0],
-            },
-          }
-          EOF
-      - name: Run commitlint
-        uses: wagoid/commitlint-github-action@v5.3.0
