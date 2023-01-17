@@ -1,7 +1,7 @@
 go 1.17
 
 use (
-	awsenv
+	awsenv1
 	basicauth
 	clock
 	crypt
